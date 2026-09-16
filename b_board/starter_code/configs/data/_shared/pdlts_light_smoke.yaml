@@ -1,0 +1,37 @@
+# PDLTS Light smoke data: 16 个训练样本 + 4 个验证样本, 1 个 worker.
+# 对应 configs/task/train_pdlts_light_smoke.yaml 的数据组件.
+# 验收目标: 在本地 WSL 上 1 epoch 跑通 (训练 + 验证), 产物落 outputs/runs/<stage>/<run_id>/.
+
+data_name: &data_name models/model_normalized.obj
+loader: &loader obj
+
+train_dataset:
+  shuffle: True
+  batch_size: 2                   # 小 batch, 保证单卡 WSL 跑得动
+  num_workers: 0                  # smoke 阶段避免多进程 jittor 启动问题
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: False
+    num_files: 16
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/smoke_train.txt, 1.0],
+      ]
+
+validate_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 0
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: False
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/smoke_validate.txt, 1.0],
+      ]

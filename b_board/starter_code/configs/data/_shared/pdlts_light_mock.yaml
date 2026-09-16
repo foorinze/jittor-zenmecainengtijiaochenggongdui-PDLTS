@@ -1,0 +1,29 @@
+# PDLTS Light mock predict data (本地模拟评测阶段).
+#
+# 从 dataset/mock_test/shapenet/<cls>/<id>/noisy.npy 读入, 走 PDLTSLightPredictSystem
+# 推理, 然后由 scripts/shared/run_mock_eval.py 调 evaluate_mock.py 做 mock 评测.
+#
+# 输入 structure (2026-04-30 生成的 mock_test v2 schema):
+#   dataset/mock_test/shapenet/<cls>/<id>/
+#     noisy.npy   (50000, 3) float32
+#     clean.npy   (50000, 3) float32   <- evaluate.py 的 gt
+#     norm.json   normalization metadata
+# 见 dataset/mock_test/manifest.json.
+#
+# 注: datalist/mock.txt 由 scripts/shared/run_mock_eval.py 按需生成 (扫 mock_test 实际文件得来);
+# 这里引用已存在的 datalist. 如果需要, 先跑 scripts/shared/run_mock_eval.py --build-datalist.
+
+predict_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 0
+  datapath:
+    input_dataset_dir: ../dataset/mock_test
+    use_prob: False
+    loader: npy
+    data_name: noisy.npy
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/mock.txt, 1.0],
+      ]

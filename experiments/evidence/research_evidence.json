@@ -1,0 +1,964 @@
+{
+  "schema_version": 1,
+  "description": "研究范围、诊断对照与原始数值摘录",
+  "inventory": {
+    "atlas_row_count": 86,
+    "atlas_group_count": 10,
+    "atlas_groups": {
+      "A-ANCHOR": 5,
+      "A-ARCH": 11,
+      "A-ASSIGN": 10,
+      "A-BRIDGE": 6,
+      "A-CASCADE": 10,
+      "A-DATA": 4,
+      "A-FND": 6,
+      "A-LOSS": 12,
+      "A-SELECT": 6,
+      "A-TRANSPORT": 16
+    },
+    "atlas_row_ids": [
+      "A-SELECT-01",
+      "A-SELECT-02",
+      "A-SELECT-03",
+      "A-SELECT-04",
+      "A-SELECT-05",
+      "A-SELECT-06",
+      "A-FND-01",
+      "A-FND-02",
+      "A-FND-03",
+      "A-FND-04",
+      "A-FND-05",
+      "A-FND-06",
+      "A-LOSS-01",
+      "A-LOSS-02",
+      "A-LOSS-03",
+      "A-LOSS-04",
+      "A-LOSS-05",
+      "A-LOSS-06",
+      "A-LOSS-07",
+      "A-LOSS-08",
+      "A-LOSS-09",
+      "A-LOSS-10",
+      "A-LOSS-11",
+      "A-LOSS-12",
+      "A-DATA-01",
+      "A-DATA-02",
+      "A-DATA-03",
+      "A-DATA-04",
+      "A-ANCHOR-01",
+      "A-ANCHOR-02",
+      "A-ANCHOR-03",
+      "A-ANCHOR-04",
+      "A-ANCHOR-05",
+      "A-TRANSPORT-01",
+      "A-TRANSPORT-02",
+      "A-TRANSPORT-03",
+      "A-TRANSPORT-04",
+      "A-TRANSPORT-05",
+      "A-TRANSPORT-06",
+      "A-TRANSPORT-07",
+      "A-TRANSPORT-08",
+      "A-TRANSPORT-09",
+      "A-TRANSPORT-10",
+      "A-TRANSPORT-11",
+      "A-TRANSPORT-12",
+      "A-TRANSPORT-13",
+      "A-TRANSPORT-14",
+      "A-TRANSPORT-15",
+      "A-TRANSPORT-16",
+      "A-ASSIGN-01",
+      "A-ASSIGN-02",
+      "A-ASSIGN-03",
+      "A-ASSIGN-04",
+      "A-ASSIGN-05",
+      "A-ASSIGN-06",
+      "A-ASSIGN-07",
+      "A-ASSIGN-08",
+      "A-ASSIGN-09",
+      "A-ASSIGN-10",
+      "A-BRIDGE-01",
+      "A-BRIDGE-02",
+      "A-BRIDGE-03",
+      "A-BRIDGE-04",
+      "A-BRIDGE-05",
+      "A-BRIDGE-06",
+      "A-ARCH-01",
+      "A-ARCH-02",
+      "A-ARCH-03",
+      "A-ARCH-04",
+      "A-ARCH-05",
+      "A-ARCH-06",
+      "A-ARCH-07",
+      "A-ARCH-08",
+      "A-ARCH-09",
+      "A-ARCH-10",
+      "A-ARCH-11",
+      "A-CASCADE-01",
+      "A-CASCADE-02",
+      "A-CASCADE-03",
+      "A-CASCADE-04a",
+      "A-CASCADE-04b",
+      "A-CASCADE-04c",
+      "A-CASCADE-04d",
+      "A-CASCADE-04e",
+      "A-CASCADE-05",
+      "A-CASCADE-06"
+    ],
+    "version_report_file_count": 170,
+    "experiment_source_file_count": 624,
+    "counting_note": "记录条目、报告文件、实验源文件三种单位分别计数，不能相加当作实验次数；不代表全部已成功执行或独立研究结论。报告限版本目录直接子文件且名称含 REPORT/CLOSURE；实验源文件限版本实验目录直接子文件。"
+  },
+  "records": [
+    {
+      "id": "overlap_capacity",
+      "scope": "B 榜开发集 20 个形状；与第二遍专训缓存不相交；真值选择不可部署",
+      "source_sha256": "f8c600e50b0bab271bd1e9d93254ce93e7da0bc2cdbf8a84f692ead11ed27675",
+      "fields": {
+        "/delta_vs_base": {
+          "consensus_medoid": {
+            "final_bootstrap_95ci": [
+              -0.09592086400532997,
+              -0.021685797402531085
+            ],
+            "mean_cd_score": -0.022662739873621975,
+            "mean_final_score": -0.05596235628767907,
+            "mean_p2s_score": -0.0892619727017383,
+            "positive_final_shapes": 5
+          },
+          "global_clean_support_oracle": {
+            "final_bootstrap_95ci": [
+              9.106483571696598,
+              13.358411588945964
+            ],
+            "mean_cd_score": 18.08272686092043,
+            "mean_final_score": 11.113054293328442,
+            "mean_p2s_score": 4.143381725736456,
+            "positive_final_shapes": 20
+          },
+          "slot_paired_oracle": {
+            "final_bootstrap_95ci": [
+              -0.16610906821507287,
+              0.8890625412792749
+            ],
+            "mean_cd_score": 0.9613480241431727,
+            "mean_final_score": 0.2996739838104254,
+            "mean_p2s_score": -0.3620000565223208,
+            "positive_final_shapes": 8
+          }
+        },
+        "/mean_scores": {
+          "base_nearest_patch": {
+            "cd_score": 67.03966850965107,
+            "final_score": 79.37682147496639,
+            "p2s_score": 91.7139744402817
+          },
+          "consensus_medoid": {
+            "cd_score": 67.01700576977744,
+            "final_score": 79.32085911867871,
+            "p2s_score": 91.62471246757998
+          },
+          "global_clean_support_oracle": {
+            "cd_score": 85.12239537057147,
+            "final_score": 90.48987576829482,
+            "p2s_score": 95.85735616601819
+          },
+          "slot_paired_oracle": {
+            "cd_score": 68.00101653379423,
+            "final_score": 79.6764954587768,
+            "p2s_score": 91.35197438375941
+          }
+        },
+        "/global_increment_over_slot": 10.813380309518017,
+        "/sample_count": 20,
+        "/implementation_checks": {
+          "all_arm_shapes_50k3": true,
+          "all_finite": true,
+          "all_slots_covered": true,
+          "baseline_shared_max_abs_le_1e6": true,
+          "candidate_count_exact": true,
+          "exact_p2s": true,
+          "sample_count": true,
+          "split_disjoint": true
+        },
+        "/wall_seconds": 12079.584562675002
+      }
+    },
+    {
+      "id": "overlap_selector",
+      "scope": "B 榜选择器 train20/heldout20；验证沿用容量诊断集合，非新独立确认集",
+      "source_sha256": "262f4e3c6c6a4e40a3598b1e75d715e948772418d91f77dba52801494bab69fd",
+      "fields": {
+        "/delta_vs_base": {
+          "consensus_medoid": {
+            "final_bootstrap_95ci": [
+              -0.09582200726045181,
+              -0.02179841730370669
+            ],
+            "mean_cd_score": -0.022716305807218264,
+            "mean_final_score": -0.055896205966367775,
+            "mean_p2s_score": -0.0890761061255155,
+            "positive_final_shapes": 5
+          },
+          "global_clean_support_oracle": {
+            "final_bootstrap_95ci": [
+              9.10651844176749,
+              13.358375071786604
+            ],
+            "mean_cd_score": 18.082718835583368,
+            "mean_final_score": 11.113047163499846,
+            "mean_p2s_score": 4.143375491416332,
+            "positive_final_shapes": 20
+          },
+          "learned_global_selector": {
+            "final_bootstrap_95ci": [
+              -16.21239522619002,
+              -6.555118139911167
+            ],
+            "mean_cd_score": -18.25519701195808,
+            "mean_final_score": -10.805611349320484,
+            "mean_p2s_score": -3.3560256866828864,
+            "positive_final_shapes": 1
+          },
+          "slot_paired_oracle": {
+            "final_bootstrap_95ci": [
+              -0.16609072822608975,
+              0.8890956561136736
+            ],
+            "mean_cd_score": 0.961356773872686,
+            "mean_final_score": 0.2996792204123004,
+            "mean_p2s_score": -0.3619983330480842,
+            "positive_final_shapes": 8
+          }
+        },
+        "/mean_scores": {
+          "base_nearest_patch": {
+            "cd_score": 67.03966916816235,
+            "final_score": 79.37682126209509,
+            "p2s_score": 91.71397335602782
+          },
+          "consensus_medoid": {
+            "cd_score": 67.01695286235514,
+            "final_score": 79.32092505612873,
+            "p2s_score": 91.6248972499023
+          },
+          "global_clean_support_oracle": {
+            "cd_score": 85.1223880037457,
+            "final_score": 90.48986842559492,
+            "p2s_score": 95.85734884744417
+          },
+          "learned_global_selector": {
+            "cd_score": 48.78447215620427,
+            "final_score": 68.5712099127746,
+            "p2s_score": 88.35794766934495
+          },
+          "slot_paired_oracle": {
+            "cd_score": 68.00102594203506,
+            "final_score": 79.6765004825074,
+            "p2s_score": 91.35197502297976
+          }
+        },
+        "/sample_count": 20,
+        "/selector_mean_roc_auc": 0.6700042661163065,
+        "/implementation_checks": {
+          "all_arm_shapes_50k3": true,
+          "all_finite": true,
+          "all_slots_covered": true,
+          "candidate_count_exact": true,
+          "exact_p2s": true,
+          "feature_boundary_clean_deferred": true,
+          "sample_count": true,
+          "selector_unique_50k": true,
+          "split_disjoint": true
+        },
+        "/wall_seconds": 15112.653509572148
+      }
+    },
+    {
+      "id": "magnitude_trajectory",
+      "scope": "A 榜机制实验；同一图模型 8 个检查点，16 个验证形状；特权投影起点",
+      "source_sha256": "8c1ddb9dcb36d4275aa4e84bd9d9d2dfe91943fcca5ffe9f25ba49831910aaff",
+      "fields": {
+        "": {
+          "boundaries": {
+            "files_deleted": false,
+            "frozen_artifacts_modified": false,
+            "training_started": false
+          },
+          "dep_sha256": {},
+          "environment": {},
+          "epoch8_cosine_abs_error_vs_p317": 8.35781222008336e-10,
+          "epoch8_reproduces_p317": true,
+          "epoch8_rms_abs_error_vs_p317": 6.2879397522142e-10,
+          "linear_extrapolated_epochs_to_reach_0p5": 44.235424879746425,
+          "peak_allocated_mb": 523.60302734375,
+          "peak_rss_mb": 970.0625,
+          "rms_ratio_late_gain_ep4_to_ep8": 0.036167457299454864,
+          "rms_ratio_late_relative_gain": 0.5663391706026559,
+          "rms_ratio_monotone_nondecreasing": false,
+          "rms_ratio_total_gain_ep1_to_ep8": 0.022610747775412943,
+          "trajectory": [
+            {
+              "epoch": 1,
+              "val_pooled_cosine": 0.414626004090384,
+              "val_rms_ratio": 0.07741854210921902
+            },
+            {
+              "epoch": 2,
+              "val_pooled_cosine": 0.6065438797277806,
+              "val_rms_ratio": 0.07708795915791052
+            },
+            {
+              "epoch": 3,
+              "val_pooled_cosine": 0.6594574209324027,
+              "val_rms_ratio": 0.06616331624603185
+            },
+            {
+              "epoch": 4,
+              "val_pooled_cosine": 0.6828766939144509,
+              "val_rms_ratio": 0.0638618325851771
+            },
+            {
+              "epoch": 5,
+              "val_pooled_cosine": 0.6768059352047305,
+              "val_rms_ratio": 0.06597224938735353
+            },
+            {
+              "epoch": 6,
+              "val_pooled_cosine": 0.7041126458581235,
+              "val_rms_ratio": 0.08365976296346851
+            },
+            {
+              "epoch": 7,
+              "val_pooled_cosine": 0.6892682414782259,
+              "val_rms_ratio": 0.08794911236884737
+            },
+            {
+              "epoch": 8,
+              "val_pooled_cosine": 0.6962934114202634,
+              "val_rms_ratio": 0.10002928988463196
+            }
+          ],
+          "validation_units": 96,
+          "wall_s": 64.29729391098954
+        }
+      }
+    },
+    {
+      "id": "magnitude_calibration",
+      "scope": "A 榜 train64/validation16；只增加幅度损失；特权投影起点",
+      "source_sha256": "8428af23702c132c42279e2f68ac8c7eb2725cfae36ce7ad1ba5d45e1ff1dfbe",
+      "fields": {
+        "/repr_summary/train_pooled_cosine": 0.5117567132126615,
+        "/repr_summary/val_pooled_cosine": 0.5125963133223923,
+        "/repr_summary/val_rms_ratio": 0.7475733299257765,
+        "/science_gates": {
+          "GE2_RESIDUAL": false,
+          "GE5_COMBINED": false,
+          "GE5_RESIDUAL": false,
+          "capture": 0.009151309222290877,
+          "ci_lower": -0.2649133236812563,
+          "ci_upper": 0.24665305948142338,
+          "mean_cd_delta": 0.4783784523875667,
+          "mean_delta_vs_q0": 89.98775852988098,
+          "mean_delta_vs_z0": 0.050944930986053016,
+          "mean_p2s_delta": -0.3764885904154607,
+          "n_positive": 13,
+          "n_total": 16,
+          "survival": false
+        },
+        "/loss_config": {
+          "lambda_scale": 0.25,
+          "rms_floor": 1e-06
+        }
+      }
+    },
+    {
+      "id": "single_step",
+      "scope": "16 个验证形状乘 3 个冻结教师状态；不是自由迭代结果",
+      "source_sha256": "707e7eedb57bc71d2655f808f45adc4f00a37f00f7126a52372545d29d99285f",
+      "fields": {
+        "/arms_mean_delta_vs_frozen_state": {
+          "model_raw": {
+            "cd": 0.2385226616157484,
+            "final": 0.11896165148521831,
+            "p2s": -0.000599358645310429
+          },
+          "model_tangent": {
+            "cd": 0.22642090255148903,
+            "final": 0.1130664652617351,
+            "p2s": -0.0002879720280188162
+          },
+          "teacher": {
+            "cd": 0.7054329222938259,
+            "final": 0.35271669694126945,
+            "p2s": 4.715887147455078e-07
+          }
+        },
+        "/one_step_capture_raw": 0.33727252641239863,
+        "/one_step_capture_tangent": 0.3205588684693362,
+        "/units": 48
+      }
+    },
+    {
+      "id": "graph_input_control",
+      "scope": "16 个相同初始状态；冻结模型；真实输入替换与匹配幅度随机扰动",
+      "source_sha256": "439a75321d2fb9c013d48b74690188838c911db125a301ac39f1af9b5b4477be",
+      "fields": {
+        "/capture": {
+          "control_cached": 0.110368236888234,
+          "control_rebuilt": 0.11036823792736394,
+          "jitter": -0.004016236400536179,
+          "repair": 0.06274341465067462
+        },
+        "/arms_mean_delta_vs_frozen_t0_state": {
+          "control_cached": {
+            "cd_score": 0.10266200366819023,
+            "final_score": 0.0510016517940457,
+            "p2s_score": -0.0006587000800983844
+          },
+          "control_rebuilt": {
+            "cd_score": 0.10266200463550801,
+            "final_score": 0.051001652274232256,
+            "p2s_score": -0.0006587000870430515
+          },
+          "jitter": {
+            "cd_score": 0.0009349526191408941,
+            "final_score": -0.0018559206543287132,
+            "p2s_score": -0.004646793927796544
+          },
+          "repair": {
+            "cd_score": 0.06509098877961605,
+            "final_score": 0.028994010202624487,
+            "p2s_score": -0.0071029683743635275
+          }
+        },
+        "/gates": {
+          "rebuild_path_equivalence": true,
+          "rebuild_path_max_abs_diff": 5.660112378791382e-09,
+          "rebuild_path_tol": 0.001,
+          "self_consistency_mean_abs_error": 4.21986889875825e-10,
+          "self_consistency_mean_tol": 1e-07,
+          "self_consistency_per_shape_max_abs_error": 7.8903781286499e-09,
+          "self_consistency_per_shape_tol": 1e-06,
+          "self_consistency_vs_p318b": true,
+          "shapes_complete": true
+        },
+        "/shapes": 16,
+        "/per_shape_repair_positive": 0
+      }
+    },
+    {
+      "id": "tangent_relaxation",
+      "scope": "A 榜选参集 30 个形状乘 9 组参数；未进入后续验证",
+      "source_sha256": "7e63853b1d18a212038fb33f8f2fd81019078a3ec30551e30e88f40625124deb",
+      "fields": {
+        "/best_cell": {
+          "alpha": 2.0,
+          "ci_lower": -0.050394102764159975,
+          "ci_upper": 0.008493437459689357,
+          "eta": 0.3,
+          "mean_b2a_hat_first": 2.0808662867531282e-05,
+          "mean_b2a_hat_last": 2.0808662867531282e-05,
+          "mean_delta_a2b": 1.9960084939279678e-07,
+          "mean_delta_b2a": -2.5448194372345105e-07,
+          "mean_delta_cd": -0.0026730514007491974,
+          "mean_delta_final": -0.013342925681420563,
+          "mean_delta_offsurface_rms": 8.709214805374886e-06,
+          "mean_delta_p2s": -0.024012799962096664,
+          "mean_final_after": 88.13023138702036,
+          "mean_final_before": 88.14357431270177,
+          "mean_moved_rms": 0.0006349054407768257,
+          "median_delta_final": 0.007259320582470252,
+          "n_positive": 25,
+          "shapes": 30,
+          "steps": 1
+        },
+        "/all_cells": [
+          {
+            "alpha": 2.0,
+            "eta": 0.3,
+            "mean_delta_cd": -0.0026730514007491974,
+            "mean_delta_final": -0.013342925681420563,
+            "mean_delta_p2s": -0.024012799962096664,
+            "n_positive": 25,
+            "steps": 1
+          },
+          {
+            "alpha": 2.0,
+            "eta": 0.3,
+            "mean_delta_cd": -0.043620636414509306,
+            "mean_delta_final": -0.04930395012483283,
+            "mean_delta_p2s": -0.05498726383516015,
+            "n_positive": 17,
+            "steps": 2
+          },
+          {
+            "alpha": 2.0,
+            "eta": 0.3,
+            "mean_delta_cd": -0.17305390466928425,
+            "mean_delta_final": -0.15143436176829586,
+            "mean_delta_p2s": -0.12981481886730914,
+            "n_positive": 10,
+            "steps": 4
+          },
+          {
+            "alpha": 2.0,
+            "eta": 0.6,
+            "mean_delta_cd": -0.1569909585866069,
+            "mean_delta_final": -0.11034942882548933,
+            "mean_delta_p2s": -0.06370789906437485,
+            "n_positive": 2,
+            "steps": 1
+          },
+          {
+            "alpha": 2.0,
+            "eta": 0.6,
+            "mean_delta_cd": -0.3640355707867324,
+            "mean_delta_final": -0.2556414889372348,
+            "mean_delta_p2s": -0.14724740708773965,
+            "n_positive": 2,
+            "steps": 2
+          },
+          {
+            "alpha": 2.0,
+            "eta": 0.6,
+            "mean_delta_cd": -0.7391633951694199,
+            "mean_delta_final": -0.5489907819500852,
+            "mean_delta_p2s": -0.3588181687307544,
+            "n_positive": 2,
+            "steps": 4
+          },
+          {
+            "alpha": 2.0,
+            "eta": 1.0,
+            "mean_delta_cd": -0.5880591869428232,
+            "mean_delta_final": -0.36541568406487196,
+            "mean_delta_p2s": -0.1427721811869257,
+            "n_positive": 0,
+            "steps": 1
+          },
+          {
+            "alpha": 2.0,
+            "eta": 1.0,
+            "mean_delta_cd": -0.9866307352865479,
+            "mean_delta_final": -0.6528189526556043,
+            "mean_delta_p2s": -0.31900717002466245,
+            "n_positive": 0,
+            "steps": 2
+          },
+          {
+            "alpha": 2.0,
+            "eta": 1.0,
+            "mean_delta_cd": -1.5260208897091438,
+            "mean_delta_final": -1.1359221962260766,
+            "mean_delta_p2s": -0.7458235027430126,
+            "n_positive": 0,
+            "steps": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "surface_integrator",
+      "scope": "单个真实网格上 N32/N5000/三次 N50000；积分器，非去噪评分器",
+      "source_sha256": "730218fcd2a1f8ee79eccc477a1381f32ef171632ed1c7a86dd8f5e56e09989c",
+      "fields": {
+        "/max_threads": 24,
+        "/n5000_serial_parallel_wall": [
+          1.145408268,
+          0.177268909
+        ],
+        "/n32_mass_difference": 1.2073675392798577e-15,
+        "/n50000_repeats": [
+          {
+            "elapsed_sec": 18.215556428,
+            "total_mass": 0.9999999999999933,
+            "total_mass_error": 6.661338147750939e-15,
+            "empty_cells": 6,
+            "max_relative_mass_residual": 0,
+            "max_global_moment_component_error": 8.951173136040325e-16,
+            "max_callback_gradient_mass_difference": 6.776263578034403e-21,
+            "objective": 2.9186272695570153e-05,
+            "query_polygons": 472908,
+            "candidate_pairs": 1694060,
+            "nonempty_intersections": 520634,
+            "finite": true,
+            "passed": true
+          },
+          {
+            "elapsed_sec": 7.347558467,
+            "total_mass": 0.9999999999999933,
+            "total_mass_error": 6.661338147750939e-15,
+            "empty_cells": 6,
+            "max_relative_mass_residual": 0,
+            "max_global_moment_component_error": 8.951173136040325e-16,
+            "max_callback_gradient_mass_difference": 6.776263578034403e-21,
+            "objective": 2.9186272695570153e-05,
+            "query_polygons": 472908,
+            "candidate_pairs": 1694060,
+            "nonempty_intersections": 520634,
+            "finite": true,
+            "passed": true
+          },
+          {
+            "elapsed_sec": 7.548615895,
+            "total_mass": 0.9999999999999933,
+            "total_mass_error": 6.661338147750939e-15,
+            "empty_cells": 6,
+            "max_relative_mass_residual": 0,
+            "max_global_moment_component_error": 8.951173136040325e-16,
+            "max_callback_gradient_mass_difference": 6.776263578034403e-21,
+            "objective": 2.9186272695570153e-05,
+            "query_polygons": 472908,
+            "candidate_pairs": 1694060,
+            "nonempty_intersections": 520634,
+            "finite": true,
+            "passed": true
+          }
+        ],
+        "/n50000_median_elapsed_sec": 7.548615895,
+        "/contracts_passed": true
+      }
+    },
+    {
+      "id": "mesh_dedup_control",
+      "scope": "32 个站点、256 个密度分区；去除重叠网格片后的导数诊断",
+      "source_sha256": "1fb06da5c14f3b013e11f9d7f27c61c81d46d86063657439c417fecf7e8dba17",
+      "fields": {
+        "/N": 32,
+        "/M": 256,
+        "/evaluator_calls": 129,
+        "/mismatched_entries": 32,
+        "/missing_signature": 0,
+        "/wrong_value_signature": 19,
+        "/diagonal_mismatches": 13,
+        "/top_mismatches": [
+          {
+            "i": 20,
+            "j": 26,
+            "analytic": -4.349735736378024,
+            "fd": -4.203476046037114,
+            "rel": 0.03479493846022953,
+            "missing": false
+          },
+          {
+            "i": 26,
+            "j": 20,
+            "analytic": -4.349735736378024,
+            "fd": -4.203476046052276,
+            "rel": 0.03479493845649699,
+            "missing": false
+          },
+          {
+            "i": 20,
+            "j": 20,
+            "analytic": 5.531080310620831,
+            "fd": 5.384820620274896,
+            "rel": 0.02716147865636204,
+            "missing": false
+          },
+          {
+            "i": 26,
+            "j": 26,
+            "analytic": 6.63203526392955,
+            "fd": 6.485775573585026,
+            "rel": 0.02255084047931048,
+            "missing": false
+          },
+          {
+            "i": 9,
+            "j": 10,
+            "analytic": -1.6951946788006782,
+            "fd": -1.6599963477410444,
+            "rel": 0.021203860543146585,
+            "missing": false
+          },
+          {
+            "i": 10,
+            "j": 9,
+            "analytic": -1.6951946788006755,
+            "fd": -1.6599969061968096,
+            "rel": 0.021203516989984596,
+            "missing": false
+          },
+          {
+            "i": 9,
+            "j": 9,
+            "analytic": 2.5115313904086003,
+            "fd": 2.4754012154561345,
+            "rel": 0.014595684419508637,
+            "missing": false
+          },
+          {
+            "i": 1,
+            "j": 19,
+            "analytic": -0.59214404346767,
+            "fd": -0.5855311062622852,
+            "rel": 0.01129391271387481,
+            "missing": false
+          },
+          {
+            "i": 19,
+            "j": 1,
+            "analytic": -0.5921440434676701,
+            "fd": -0.5855311062698664,
+            "rel": 0.011293912700781283,
+            "missing": false
+          },
+          {
+            "i": 10,
+            "j": 10,
+            "analytic": 4.074830935047251,
+            "fd": 4.037981517369652,
+            "rel": 0.009125702413220105,
+            "missing": false
+          },
+          {
+            "i": 21,
+            "j": 15,
+            "analytic": -1.076999057646708,
+            "fd": -1.0674052477155977,
+            "rel": 0.008987973360298059,
+            "missing": false
+          },
+          {
+            "i": 6,
+            "j": 29,
+            "analytic": -2.549154554519153,
+            "fd": -2.5713453900125955,
+            "rel": 0.008630048526205141,
+            "missing": false
+          },
+          {
+            "i": 29,
+            "j": 6,
+            "analytic": -2.5491545545191534,
+            "fd": -2.5713453899923793,
+            "rel": 0.00863004851841068,
+            "missing": false
+          },
+          {
+            "i": 15,
+            "j": 21,
+            "analytic": -1.0765991658722385,
+            "fd": -1.0674052477004352,
+            "rel": 0.008613334243587598,
+            "missing": false
+          },
+          {
+            "i": 6,
+            "j": 16,
+            "analytic": -0.3685123887387983,
+            "fd": -0.3710156853829811,
+            "rel": 0.006747145047516581,
+            "missing": false
+          },
+          {
+            "i": 16,
+            "j": 6,
+            "analytic": -0.3685123887387992,
+            "fd": -0.37101568537792695,
+            "rel": 0.006747145033983701,
+            "missing": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "derivative_denominator",
+      "scope": "同一去重网格 8 对界面独立重建；比较投影与非投影分母",
+      "source_sha256": "044cd2274916a3cb060b627eaa89b2f22ce02251094754a3c5bd639c6c95cc2f",
+      "fields": {
+        "": [
+          {
+            "i": 1,
+            "j": 19,
+            "fd": 0.5855311062622852,
+            "proj": 0.5853519921207372,
+            "unproj": 0.5840222302452583,
+            "rel_proj": 0.0003059003008250055,
+            "rel_unproj": 0.002576935709972307,
+            "crossing_faces": 370
+          },
+          {
+            "i": 6,
+            "j": 16,
+            "fd": 0.3710156853829811,
+            "proj": 0.3709436819939546,
+            "unproj": 0.368516906391335,
+            "rel_proj": 0.0001940710106424189,
+            "rel_unproj": 0.006734968601305124,
+            "crossing_faces": 233
+          },
+          {
+            "i": 6,
+            "j": 29,
+            "fd": 2.5713453900125955,
+            "proj": 2.5894552569538734,
+            "unproj": 2.2422008485814464,
+            "rel_proj": 0.0070429538605037804,
+            "rel_unproj": 0.12800479574217638,
+            "crossing_faces": 368
+          },
+          {
+            "i": 9,
+            "j": 10,
+            "fd": 1.6599963477410444,
+            "proj": 1.6601939165344488,
+            "unproj": 1.5130428740851172,
+            "rel_proj": 0.00011901760728162718,
+            "rel_unproj": 0.08852638372120783,
+            "crossing_faces": 164
+          },
+          {
+            "i": 10,
+            "j": 30,
+            "fd": 0.7282207049385612,
+            "proj": 0.7273139238186225,
+            "unproj": 0.7009180943289981,
+            "rel_proj": 0.0012452009587055025,
+            "rel_unproj": 0.037492219631226426,
+            "crossing_faces": 197
+          },
+          {
+            "i": 15,
+            "j": 21,
+            "fd": 1.0674052477004352,
+            "proj": 1.0634911971498942,
+            "unproj": 1.0191865106593878,
+            "rel_proj": 0.0036668833687798475,
+            "rel_unproj": 0.04517378675524357,
+            "crossing_faces": 557
+          },
+          {
+            "i": 16,
+            "j": 22,
+            "fd": 0.8374060296489639,
+            "proj": 0.8374628648896234,
+            "unproj": 0.8069155569324782,
+            "rel_proj": 6.787058923291332e-05,
+            "rel_unproj": 0.03641061998236052,
+            "crossing_faces": 391
+          },
+          {
+            "i": 20,
+            "j": 26,
+            "fd": 4.203476046037114,
+            "proj": 4.132759957999442,
+            "unproj": 3.7382061822886774,
+            "rel_proj": 0.016823240399892574,
+            "rel_unproj": 0.11068693116190734,
+            "crossing_faces": 573
+          }
+        ]
+      }
+    },
+    {
+      "id": "damped_solver",
+      "scope": "单形状 50000 站点；40 轮延续，非完整数据集教师生成",
+      "source_sha256": "59005d485ef1c6cf232282ed7e9f0589b4f42d8236422bf946daf592f30a540e",
+      "fields": {
+        "/N": 50000,
+        "/initial_res_l2": 0.20980192492575533,
+        "/initial_res_inf": 1.439377575716845,
+        "/final_res_l2": 0.038470047478749776,
+        "/final_res_inf": 1.0849428192263382,
+        "/final_res_p99": 0.10170466339748144,
+        "/final_empty_cells": 0,
+        "/evaluator_calls": 102,
+        "/elapsed_sec": 3537.150949142
+      }
+    },
+    {
+      "id": "small_controller",
+      "scope": "A 榜 mock200；冻结系数跨基础预测迁移，形状曾用于路线研究",
+      "source_sha256": "f73814350f898b3952ea24e576de54317caf31eed0e3eb7faec355eeb0b43e81",
+      "fields": {
+        "/delta": {
+          "balanced": {
+            "cd_score": 0.022969617898596084,
+            "final_score": 0.02846209081717177,
+            "p2s_score": 0.03395456373579009
+          },
+          "weighted": {
+            "cd_score": 0.027311836380704335,
+            "final_score": 0.030766687445591856,
+            "p2s_score": 0.034221538510465166
+          }
+        },
+        "/bootstrap_final": {
+          "balanced": {
+            "ci_high": 0.033711149072659194,
+            "ci_low": 0.02296167952730808,
+            "seed": 20260729
+          },
+          "resamples": 100000,
+          "weighted": {
+            "ci_high": 0.03768519678638007,
+            "ci_low": 0.023681288706687474,
+            "seed": 20260730
+          }
+        },
+        "/sign_count_final": {
+          "negative": 25,
+          "positive": 175,
+          "zero": 0
+        },
+        "/positive_category_count": 11
+      }
+    },
+    {
+      "id": "normalization_full",
+      "scope": "B 榜 19328 个训练形状，与 mock_b 200 形状不相交；ep0-30",
+      "source_sha256": "d01854d352f294fd76bfdd6c24a4293b97656b43e81af1eaa6ed35dc0e6801d0",
+      "fields": {
+        "/scores": {
+          "cd": 66.11,
+          "p2s": 88.43,
+          "final": 77.27
+        },
+        "/prediction_quality/n_samples": 200,
+        "/prediction_quality/n_missing_total": 0,
+        "/quality_gate": true
+      }
+    },
+    {
+      "id": "normalization_state",
+      "scope": "完整训练末轮状态键审计；确认归一化配置实际生效",
+      "source_sha256": "c130be06e60b85a1ed0c945cfa1620b7bb2d63d0efc38be44a11ca672fbc9e3b",
+      "fields": {
+        "/state_key_count": 447,
+        "/running_stat_key_count": 0,
+        "/groupnorm_contract_pass": true
+      }
+    },
+    {
+      "id": "overlap_capacity_rows",
+      "scope": "逐形状记录复算，均值之比，不是各形状比值的均值",
+      "source_sha256": "8a5f3f3f01a41bc739da672228520ac62f527717394d2a934edc2f8a4fc2bf7f",
+      "derived": {
+        "row_count": 20,
+        "candidate_counts": [
+          600064
+        ]
+      }
+    },
+    {
+      "id": "overlap_selector_rows",
+      "scope": "逐形状记录复算，均值之比，不是各形状比值的均值",
+      "source_sha256": "3c7cb2494346c77696fe1507a429d2da5ffe47f5c0e92b07d6802c74057fe247",
+      "derived": {
+        "row_count": 20,
+        "candidate_counts": [
+          600064
+        ],
+        "learned_over_base_ratio_of_raw_means": {
+          "a2b_raw": 1.1302030527632783,
+          "b2a_raw": 2.170730373363,
+          "b2a_p95": 2.9135258967231943,
+          "b2a_p99": 3.8283821902627877
+        }
+      }
+    }
+  ]
+}

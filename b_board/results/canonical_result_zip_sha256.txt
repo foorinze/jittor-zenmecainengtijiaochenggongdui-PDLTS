@@ -1,0 +1,5 @@
+canonical B result.zip
+file: result.zip (not included in the public repository)
+bytes: 111234354
+sha256: ce60a7ce52a59c918d9dc6bd0a0a2b845f758ca38fc8f7130092e653985bf81f
+note: public reproduction creates a fresh result.zip under code/outputs/submissions/b_final/<submit_id>/.

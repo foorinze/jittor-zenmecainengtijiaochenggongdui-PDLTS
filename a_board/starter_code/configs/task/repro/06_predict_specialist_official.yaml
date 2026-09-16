@@ -1,0 +1,26 @@
+CONFIG_VERSION: a_final
+mode: predict
+debug: False
+
+# 第二阶段（精修网络）在官方测试集上的推理，即最终提交结果。
+# 输入 = 第一阶段官方输出，权重 = 精修网络第三步（评分归一化损失）产物。
+#
+# 输出：../outputs/predictions/a_final/repro_specialist_official/pred/
+#         shapenet/<cls>/<id>/denoised.npy
+#
+# 这一步跑完后用 scripts/shared/pack_submission.py 打成 result.zip。
+
+load_ckpt: ../outputs/runs/a_final/repro_specialist_step3_scorenorm/specialist_step3_scorenorm.pkl
+run_id: repro_specialist_official
+run_tag: repro_specialist_official
+
+components:
+  data: specialist_official
+  transform: pdlts_light
+  system: pdlts_light_predict
+  model: pdlts_light
+
+writer:
+  __target__: pdlts_light
+  save_dir: __overridden_by_system__
+  save_name: denoised

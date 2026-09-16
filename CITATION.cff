@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "使用本仓库时请引用此软件，并引用 THIRD_PARTY_NOTICES.md 中的 PD-LTS 基础论文。"
+type: software
+title: "PDLTS: Jittor 三维点云去噪竞赛实现"
+authors:
+  - name: "怎么才能提交成功队"
+abstract: "PD-LTS Light 的 Jittor 改造、两遍去噪专训及 A/B 榜复现代码。"
+keywords:
+  - Jittor
+  - point cloud denoising
+  - PD-LTS

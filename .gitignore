@@ -1,0 +1,39 @@
+# Python/Jittor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tmp_jt_cache/
+
+# Local datasets and generated artifacts
+dataset/
+b_board/dataset/
+outputs/
+b_board/outputs/
+tmp/
+
+# Local environments and editor state
+.env
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Generated submissions and temporary archives
+result.zip
+*.zip
+*.tar
+*.tar.gz
+*.7z
+
+# Logs
+*.log
+nohup.out
+
+# Local DCD comparison sources: no upstream license; excluded from release.
+/b_board/starter_code/tests/_dcd_oracle_numpy.py
+/b_board/starter_code/tests/test_dcd_oracle_equivalence.py
+/b_board/starter_code/tests/test_dcd_official_jittor.py
+/b_board/starter_code/src/model/pdlts_light/losses/dcd_official.py
+/a_board/starter_code/src/model/pdlts_light/losses/dcd_official.py

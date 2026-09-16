@@ -1,0 +1,66 @@
+# PDLTS Light 的 transform 配置
+#
+# 与 configs/transform/_shared/vm.yaml 几乎一致, 区别:
+#   - patch_size: 1024 (PD-LTS 原版对齐, VM 用的是 1000)
+#   - predict_transform: 空 (不做 sample/add_noise/patch)
+#
+# 不改动的共享项 (与 V10 保持一致, 便于对照):
+#   - AugmentSample num_samples=32768 / num_vertex_samples=1024
+#   - AugmentAddNoise Laplace 0.005 ~ 0.020
+#   - AugmentLinear 旋转/缩放增广
+#   - AugmentPatch num_patches=1 (每样本出一个 patch)
+#
+# 两点重要注意:
+#   - predict 路径的输入是 noisy.npy (see NpyLazyAsset), 没有 mesh faces.
+#     所以 predict_transform 不能沿用 validate_transform — 否则 AugmentSample
+#     会因 asset.faces is None 报错. 局部块切分和拼接在 pdlts_light/denoise.py 中完成。
+#   - train / validate 用的 AugmentPatch 对 patch 做的是 "seed_points_t (clean / noisy
+#     之间按 t 插值的中心) 减法", 不是纯 noisy seed 减法. 这是 starter_code 现有
+#     AugmentPatch 的口径, 和原 PD-LTS denoise.py 里 `patches - seed_pnts_1` 的
+#     纯 noisy seed 中心与当前插值种子中心不同。
+
+train_transform:
+  augments:
+    - __target__: sample
+      num_samples: 32768
+      num_vertex_samples: 1024
+
+    - __target__: normalize_pc
+
+    - __target__: add_noise
+      noise_std_min: 0.005
+      noise_std_max: 0.020
+
+    - __target__: linear
+      scale: [0.8, 1.2]
+      rotate_x_range: [-180, 180]
+      rotate_y_range: [-180, 180]
+      rotate_z_range: [-180, 180]
+      scale_p: 0.5
+      rotate_p: 0.5
+
+    - __target__: patch
+      patch_size: 1024
+      num_patches: 1
+      train_cvm_network: False
+
+validate_transform:
+  augments:
+    - __target__: sample
+      num_samples: 32768
+      num_vertex_samples: 1024
+
+    - __target__: normalize_pc
+
+    - __target__: add_noise
+      noise_std_min: 0.005
+      noise_std_max: 0.020
+
+    - __target__: patch
+      patch_size: 1024
+      num_patches: 1
+      train_cvm_network: False
+
+# predict 走 noisy.npy, 不复用 validate; patch 切分和拼接由 denoise.py 完成。
+predict_transform:
+  augments: []

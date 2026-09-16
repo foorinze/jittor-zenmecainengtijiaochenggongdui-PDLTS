@@ -1,0 +1,24 @@
+CONFIG_VERSION: a_final
+
+# 第二阶段（精修网络）在官方测试集上的推理输入。
+#
+# 注意输入目录不是 dataset/test_noisy，而是第一阶段在官方测试集上的输出。
+# 精修网络的训练目标是「第一阶段输出 -> 真值」的残余映射，所以推理时的
+# 输入分布必须与训练时一致，即必须喂第一阶段的输出，不能直接喂原始 noisy。
+#
+# 该目录由 configs/task/repro/02_predict_base_official.yaml 生成。
+
+predict_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 0
+  datapath:
+    input_dataset_dir: ../outputs/predictions/a_final/repro_base_official/pred
+    use_prob: False
+    loader: npy
+    data_name: denoised.npy
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/test.txt, 1.0],
+      ]

@@ -1,0 +1,44 @@
+{
+  "artifact": "specialist_final_training_summary",
+  "created_at": "2026-08-14T23:05:35",
+  "kind": "train",
+  "public_stage": "B 榜第二遍 specialist（专训模型）训练摘要",
+  "load_checkpoint": "checkpoints/base_ep149.pkl",
+  "output_checkpoint": "checkpoints/specialist_final.pkl",
+  "training_setup": {
+    "n_train_samples": 2000,
+    "patches_per_sample": 20,
+    "patch_size": 1024,
+    "n_epochs": 50,
+    "lr": 0.0001,
+    "batch_size": 16,
+    "seed": 42,
+    "patch_seed": 42,
+    "shuffle_seed": 10000042,
+    "ema_enabled": false,
+    "total_optimizer_steps": 125000,
+    "train_time_sec": 48363.5
+  },
+  "loss_summary": {
+    "loss_history_len": 50,
+    "first_loss": 0.0001261491367884446,
+    "last_loss": 0.00011981995303649456,
+    "tail_loss_history": [
+      0.00011972772121080198,
+      0.00011975165850890334,
+      0.00011965065192780457,
+      0.0001197045735665597,
+      0.00011981995303649456
+    ]
+  },
+  "last_epoch_record": {
+    "epoch": 50,
+    "n_patches": 40000,
+    "n_batches": 2500,
+    "loss": 0.00011981995303649456,
+    "patch_index_hash": "8640e87238619fb0d84d501b1cc09a88fba4aa6d8d120cd17fbac9348035044a",
+    "batch_order_hash": "7089a530a3cf9a8a819440463e7232c7c33bb23c25be8f82b67fe86847f1b456"
+  },
+  "note": "warm-start（热启动）自第一遍 base checkpoint；评测使用公开 README 中的 B 榜复现入口。",
+  "source_note": "原始内部运行路径已在公开版脱敏；完整原始 manifest 保留在最终提交包和内部迁移审计中。"
+}

@@ -1,0 +1,22 @@
+mode: train
+debug: False
+
+# PDLTS Light 本地长训 (过夜): 10k / batch=8 / 50 epochs / lr=5e-4.
+# 预估: 1250 iter/epoch × 0.43s ≈ 9 min/epoch, 50 epoch ≈ 7.5 小时.
+
+components:
+  data: pdlts_light_10k_b8
+  transform: pdlts_light
+  system: pdlts_light
+  model: pdlts_light
+
+loss:
+  chamfer: 1.0
+  l2: 0.1
+
+optimizer:
+  __target__: adam
+  lr: 0.0005
+
+trainer:
+  epochs: 50

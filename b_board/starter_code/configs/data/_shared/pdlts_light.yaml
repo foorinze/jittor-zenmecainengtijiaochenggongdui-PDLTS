@@ -1,0 +1,39 @@
+# PDLTS Light 的 data 配置
+#
+# 路径口径使用 PDLTS 项目统一入口:
+#   从 starter_code/ 执行时, 数据在 ../dataset/train 和 ../dataset/mock_test
+# 与 configs/data/_shared/train.yaml 的主要区别: 路径从 ./dataset_train 改到 ../dataset/train.
+
+data_name: &data_name models/model_normalized.obj
+loader: &loader obj
+
+train_dataset:
+  shuffle: True
+  batch_size: 16
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: True
+    num_files: 10000
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/train.txt, 1.0],
+      ]
+
+validate_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: False
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/validate.txt, 1.0],
+      ]

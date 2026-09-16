@@ -1,0 +1,7 @@
+__target__: pdlts_light
+CONFIG_VERSION: b_final
+
+# B 榜 base（基础模型）strict resume（严格续训），epoch 100 到 epoch 149。
+ckpt_save_name: pdlts_light
+run_tag: b_final_base_resume_ep100_149
+start_epoch: 0

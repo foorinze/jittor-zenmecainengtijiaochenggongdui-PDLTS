@@ -1,0 +1,24 @@
+__target__: PDLTSLight
+
+# 与 pdlts_light.yaml 完全相同的网络结构，只把推理时的 patch 分批倍数调大，
+# 用于 2000 个整云的长时间批量推理。
+#
+# predict_seed_k_alpha 只影响 patch 分几批送进网络
+# （batch_size = ceil(K / alpha)），不改变任何数值结果。
+# alpha 从 30 提到 80 后单批 patch 数更少、显存峰值更低，
+# 长跑不会中途 OOM。最终提交的推理用 pdlts_light.yaml（alpha=30）。
+
+# ----- 网络结构 -----
+pc_channel: 3
+aug_channel: 48
+n_injector: 12
+cut_channel: 24
+nflow_module: 12
+num_neighbors: 32
+
+mlgc_hidden: 64
+coupling_hidden: 64
+log_scale_clamp: 0.1
+
+# ----- 推理参数 -----
+predict_seed_k_alpha: 80

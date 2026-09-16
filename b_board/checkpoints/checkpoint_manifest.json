@@ -1,0 +1,36 @@
+{
+  "track": 2,
+  "team": "怎么才能提交成功队",
+  "b_rank": 8,
+  "online_score": 81.05,
+  "source_packages": {
+    "b_final_upload_zip_sha256": "b82fb3439611b987ea06e18eec1926d73b13af91f2fab0a2a2a0ac599c6a44fa",
+    "b_code_review_core_zip_sha256": "d0c5d719e26fb51926f4d198e7d4201ed4016b23a9311cf5d0d0c93af52b48d0",
+    "note": "原始内部运行路径已在公开版脱敏；完整原始 manifest 保留在最终提交包和内部迁移审计中。"
+  },
+  "checkpoints": {
+    "base_ep149": {
+      "file": "b_board/checkpoints/base_ep149.pkl",
+      "public_stage": "B 榜第一遍 base（基础模型）checkpoint（检查点）",
+      "training_window": "epoch 100 到 epoch 149，strict resume（严格续训）",
+      "bytes": 3109055,
+      "sha256": "d9204ea285bf1307fa81d6d63698a4c2b2b3e4b02b934aa689ff26dce791cd8c",
+      "role": "first-pass B-board base; used to generate the first-pass prediction cache",
+      "source_note": "原始内部运行路径已在公开版脱敏；完整原始 manifest 保留在最终提交包和内部迁移审计中。"
+    },
+    "specialist_final": {
+      "file": "b_board/checkpoints/specialist_final.pkl",
+      "public_stage": "B 榜第二遍 specialist（专训模型）checkpoint（检查点）",
+      "training_scope": "固定 2,000 个样本的第二遍专训，warm-start（热启动）自第一遍 base checkpoint",
+      "bytes": 3109055,
+      "sha256": "9cf3da467828fb8b6cf613ee69abd5ad50a51e09430a83df22174a8265e21bf9",
+      "role": "second-pass specialist; used in the final cascade prediction",
+      "source_note": "原始内部运行路径已在公开版脱敏；完整原始 manifest 保留在最终提交包和内部迁移审计中。"
+    }
+  },
+  "inference": {
+    "seed_k_l1": 12,
+    "seed_k_l2": 24,
+    "cascade": "base ep149 official output -> second-pass specialist"
+  }
+}

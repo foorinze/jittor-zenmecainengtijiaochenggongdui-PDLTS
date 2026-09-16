@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "description": "Heavy 迁移失败与 Light 结构、损失消融的公开证据摘录。",
+  "scope": "分数均为 A 榜研发 mock20 本地模拟评测，不是线上成绩。",
+  "provenance": "metrics 保留原始 JSON 对象；摘要只摘取标明的字段；日志保留注明的原文片段。SHA-256 对应归档源文件的完整原始字节，未对摘录文本重新计算。内部目录和机器账户不随本文件发布，可按哈希定位原始归档。",
+  "limitations": [
+    "早期 Jittor Heavy、官方 PyTorch 三阶段 Heavy、Light 中的 iMonotone 是不同实验对象。",
+    "Light 20 轮和 100 轮 Jittor 结构消融中的 iMonotone 为收缩系数 0.9、ELU、暖启动后展开 5 步 Banach 迭代的近似梯度配方；不能外推到所有原版 iMonotone 配置。",
+    "结构消融为单种子实验；100 轮仿射耦合模型为历史对照经同一评测器重评。两位小数分数相同不等于统计等价。",
+    "早期 20 轮两臂评测目录曾错误使用 mock200，输出 8.20/8.18；这些错误指标未纳入 scores。单调结构使用后续 mock20 重评指标，仿射结构 81.82 使用修正范围后的实验摘要字段，未冒充原始 metrics。",
+    "Heavy direct-10k 旧汇总的设备与失败进度存在不一致；本文件的云端稳定性证据取有 RTX 4090 运行清单和原始失败日志的短周期续训。",
+    "CUDA 异步错误的报告位置不确定底层根因。日志不能证明显存不足、固定坏样本或求根算法本身是唯一原因。"
+  ],
+  "scores": [
+    {
+      "id": "heavy_micro49",
+      "experiment_id": "A-LOSS-06",
+      "framework": "Jittor",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "7d61a6b5aaa99f8957ca0428e629ad4acaf1140bcebf301bf5984035e5df3ff0",
+      "note": "早期 Jittor Heavy 近似实现；micro 为每轮 1k 样本的短周期编号，不是全量训练轮次。",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00010939,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 61.62,
+        "p2s_pred_mean": 0.00005153,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 78.93,
+        "final_score": 70.28
+      }
+    },
+    {
+      "id": "heavy_micro59",
+      "experiment_id": "A-LOSS-06",
+      "framework": "Jittor",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "5f509cdd93e3e84383521b88a219b1b4f291aa49795220bc16d98cea2dba9b90",
+      "note": "早期 Jittor Heavy 近似实现；micro 为每轮 1k 样本的短周期编号，不是全量训练轮次。",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00010424,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 63.55,
+        "p2s_pred_mean": 0.00004709,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 81.16,
+        "final_score": 72.35
+      }
+    },
+    {
+      "id": "heavy_micro79",
+      "experiment_id": "A-LOSS-06",
+      "framework": "Jittor",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "0b6200e9439c8bb5da8ab4eaf6d31a68b47f932226c5adedd937360c1c782f4d",
+      "note": "早期 Jittor Heavy 近似实现；micro 为每轮 1k 样本的短周期编号，不是全量训练轮次。",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00010082,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 64,
+        "p2s_pred_mean": 0.00004395,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 81.65,
+        "final_score": 72.82
+      }
+    },
+    {
+      "id": "heavy_emd_train100_2500steps",
+      "experiment_id": "A-ARCH-11",
+      "framework": "PyTorch",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "8c845dba9525c7da32cbb99f18bd1532976e9e4d636846fd22a1612239b283f0",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00010314,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 62.41,
+        "p2s_pred_mean": 0.00004109,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 81.73,
+        "final_score": 72.07
+      }
+    },
+    {
+      "id": "heavy_emd_train2000_2500steps",
+      "experiment_id": "A-ARCH-11",
+      "framework": "PyTorch",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "2d6d7f4446384e946cacdcf3c59b405833898961d9fe92bae3fd4d6a3506340c",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00010339,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 61.53,
+        "p2s_pred_mean": 0.00003756,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 82.22,
+        "final_score": 71.88
+      }
+    },
+    {
+      "id": "heavy_emd_train100_4000steps",
+      "experiment_id": "A-ARCH-11",
+      "framework": "PyTorch",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "f723f745c3bc9b306ac5ded14029751929d4f02ed49c8f341e112060186c707c",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00010616,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 62.06,
+        "p2s_pred_mean": 0.00004649,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 79.96,
+        "final_score": 71.01
+      }
+    },
+    {
+      "id": "light_mono_chamfer_ep19",
+      "experiment_id": "A-ARCH-04",
+      "framework": "Jittor",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "a986920d7916005ff4805184dd83245a632ace91f5b2a003af01e88bc19255fc",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00007229,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 72.25,
+        "p2s_pred_mean": 0.00002006,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 90.26,
+        "final_score": 81.26
+      }
+    },
+    {
+      "id": "light_affine_chamfer_ep19",
+      "experiment_id": "A-ARCH-04",
+      "framework": "Jittor",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "da0af3f10725b06899a89bf22b38d9bcfb28919d04ea83e0028f188c487f90de",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00007318,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 71.92,
+        "p2s_pred_mean": 0.00002201,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 89.41,
+        "final_score": 80.66
+      }
+    },
+    {
+      "id": "light_mono_chamfer_l2_ep99",
+      "experiment_id": "A-ARCH-04",
+      "framework": "Jittor",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "0baedbf334bc549d48e6704dc49359b1653f5203c3463da4aed32a183655073a",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00006461,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 74.96,
+        "p2s_pred_mean": 0.00001739,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 91.57,
+        "final_score": 83.26
+      }
+    },
+    {
+      "id": "light_affine_chamfer_l2_ep99",
+      "experiment_id": "A-ARCH-04",
+      "framework": "Jittor",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "e01851466480ddc7e9476cb3d77ce83edb063b9d791a147ea327f63b3ff5fbab",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00006476,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 74.91,
+        "p2s_pred_mean": 0.00001718,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 91.6,
+        "final_score": 83.26
+      }
+    },
+    {
+      "id": "light_mono_chamfer_l2_ep19",
+      "experiment_id": "A-ARCH-04",
+      "framework": "Jittor",
+      "scope": "mock20",
+      "source_kind": "metrics.json（原始指标对象）",
+      "source_sha256": "c69b013a15e97b2889a5efb0b084acd613413357a5ddd2116d0caabae93f07b6",
+      "metrics": {
+        "total_samples": 20,
+        "valid_predictions": 20,
+        "missing_predictions": 0,
+        "shape_errors": 0,
+        "skipped_mesh_norm": 0,
+        "cd_pred_mean": 0.00006931,
+        "cd_noisy_mean": 0.00030442,
+        "cd_score": 73.12,
+        "p2s_pred_mean": 0.00001803,
+        "p2s_noisy_mean": 0.0002341,
+        "p2s_score": 90.97,
+        "final_score": 82.04
+      }
+    }
+  ],
+  "summary_extracts": [
+    {
+      "id": "light_affine_chamfer_l2_ep19",
+      "experiment_id": "A-ARCH-04",
+      "framework": "Jittor",
+      "source_kind": "实验 summary（摘要）",
+      "source_sha256": "dabf5a5a33282ac07fe4b08613ab71acddf32b7ed59abef921c4786fdf8d6d3b",
+      "source_field": "mock20_eval.j_ctrl",
+      "value": {
+        "final": 81.82,
+        "cd": 72.81,
+        "p2s": 90.82
+      },
+      "scope_field": "mock20_eval.scope",
+      "scope": "mock20 (20 samples, datalist-restricted)",
+      "valid_predictions": "20/20 (both arms, G3-pre PASS)"
+    }
+  ],
+  "evaluation_stdout": [
+    {
+      "id": "light_mono_emd_ep19",
+      "experiment_id": "A-ARCH-05",
+      "framework": "Jittor",
+      "recipe": "收缩系数 0.98、LipSwish、原生 EMD、5 步近似梯度，从零训练 20 轮；seed_k=3。",
+      "source_sha256": "6f93b9b7b78ba10579e933cc73dcb9ab2869cd16529a3904f06fd7c6f002124f",
+      "stdout": "开始评测 20 个样本... (P2S 精度: pcu-BVH)\n\n=================================================================\n  点云降噪评测结果  [evaluate_mock — 精确 P2S / 基于 norm.json]\n=================================================================\n  评测样本总数:       20\n  有效预测数:         20\n  缺失预测数:         0\n  点数不匹配数:       0\n  缺失 mesh/norm 数:  0\n  并行进程数:         8\n  评测耗时:           6.8s\n-----------------------------------------------------------------\n  平均 CD_pred:       0.00007962\n  平均 CD_noisy:      0.00030442\n  CD 得分:            69.46 / 100.00\n  平均 P2S_pred:      0.00002396\n  平均 P2S_noisy:     0.00023410\n  P2S 得分:           88.17 / 100.00\n-----------------------------------------------------------------\n  最终得分 (0.5×CD + 0.5×P2S):  78.81 / 100.00\n=================================================================\n"
+    }
+  ],
+  "failure_records": [
+    {
+      "id": "heavy_cloud_micro80_89",
+      "experiment_id": "A-LOSS-06",
+      "environment": {
+        "source_sha256": "5cb10803a86016a3ee98463dc0af6b13b80228fe8412a23d466d1acaccde9884",
+        "verbatim_lines": [
+          "run_kind: cloud_continuation",
+          "machine: cloud_4090",
+          "os: ubuntu22.04",
+          "gpu: rtx4090_24gb",
+          "epoch_unit: micro_epoch",
+          "baseline_mapping: \"10 micro_epoch = 1 baseline_eq_epoch\"",
+          "jittor_version: 1.3.10.0"
+        ]
+      },
+      "supervisor": {
+        "source_sha256": "f0df2f63497773778eb836fc100e0ded8e92c8e708b718ec491c4a7ba18eaf48",
+        "selection": "保留训练段结果、失败标记和三个尝试的段编号；含路径的尝试行截取到 load_ckpt 字段之前。",
+        "verbatim_excerpts": [
+          "[2026-05-19 18:18:19] [segment result] lane=virtual10k_smoke status=0 expected_ckpt=YES new_done=60",
+          "[2026-05-19 19:33:43] [segment result] lane=virtual10k_smoke status=0 expected_ckpt=YES new_done=70",
+          "[2026-05-19 20:49:17] [segment result] lane=virtual10k_smoke status=0 expected_ckpt=YES new_done=80",
+          "[2026-05-19 20:49:22] --- lane=virtual10k_smoke segment epoch 80 -> 90 (10ep), try=0",
+          "[2026-05-19 21:54:05] [segment result] lane=virtual10k_smoke status=134 latest=87 new_done=88 expected_done=90 expected_ckpt=NO",
+          "[2026-05-19 21:54:05] [ERROR] lane=virtual10k_smoke segment failed or incomplete.",
+          "[2026-05-19 21:54:15] --- lane=virtual10k_smoke segment epoch 80 -> 90 (10ep), try=1",
+          "[2026-05-19 22:30:12] [segment result] lane=virtual10k_smoke status=134 latest=87 new_done=88 expected_done=90 expected_ckpt=NO",
+          "[2026-05-19 22:30:12] [ERROR] lane=virtual10k_smoke segment failed or incomplete.",
+          "[2026-05-19 22:30:22] --- lane=virtual10k_smoke segment epoch 80 -> 90 (10ep), try=2"
+        ]
+      },
+      "last_attempt": {
+        "source_sha256": "055180bccd07605ca649311a78e0fa69eef0907ccc5f2a07b28bc2dd3fe8ed5d",
+        "observed_epoch": 85,
+        "selection": "末次异常栈中的原文子串；路径与终端进度条未收录。",
+        "verbatim_fragments": [
+          "w_warm = root_find(lambda z: nnet_clone(z), scaled_x_detached)",
+          "result = find_fixed_point(g_fn, y)",
+          "if jt.all((x - x_prev) ** 2 / (tol + 1e-12) < 1.0):",
+          "return ori_bool(v.item())",
+          "Execute fused operator(2058/7921) failed.",
+          "[OP TYPE]: fused_op:( broadcast_to, broadcast_to, binary.multiply, reduce.add,)",
+          "[Input]: float32[64,35,], float32[4096,35,],",
+          "[Output]: float32[4096,64,],",
+          "[Async Backtrace]: not found, please set env JT_SYNC=1, trace_py_var=3",
+          "code=13( CUBLAS_STATUS_EXECUTION_FAILED )",
+          "code=4( CUDNN_STATUS_INTERNAL_ERROR )"
+        ]
+      },
+      "interpretation": "该段三个尝试均未完成：前两次监督日志记录退出码 134，第三次训练日志在 micro85 给出矩阵乘法失败和后续 cuDNN 清理错误。最后有效评测点为 micro79。"
+    }
+  ],
+  "timing_extracts": [
+    {
+      "id": "light_mono_chamfer_ep19",
+      "source_sha256": "783bff6a2b1978558feee227c2110db9b3b5b697f7c639dd0b18e19bb25f4901",
+      "epoch_timestamps": [
+        {
+          "epoch": 0,
+          "time": "2026-07-14 10:40:10"
+        },
+        {
+          "epoch": 1,
+          "time": "2026-07-14 10:51:54"
+        },
+        {
+          "epoch": 2,
+          "time": "2026-07-14 11:03:38"
+        },
+        {
+          "epoch": 3,
+          "time": "2026-07-14 11:15:23"
+        },
+        {
+          "epoch": 4,
+          "time": "2026-07-14 11:27:09"
+        },
+        {
+          "epoch": 5,
+          "time": "2026-07-14 11:38:51"
+        },
+        {
+          "epoch": 6,
+          "time": "2026-07-14 11:50:34"
+        },
+        {
+          "epoch": 7,
+          "time": "2026-07-14 12:02:18"
+        },
+        {
+          "epoch": 8,
+          "time": "2026-07-14 12:14:00"
+        },
+        {
+          "epoch": 9,
+          "time": "2026-07-14 12:25:44"
+        },
+        {
+          "epoch": 10,
+          "time": "2026-07-14 12:37:28"
+        },
+        {
+          "epoch": 11,
+          "time": "2026-07-14 12:49:12"
+        },
+        {
+          "epoch": 12,
+          "time": "2026-07-14 13:00:56"
+        },
+        {
+          "epoch": 13,
+          "time": "2026-07-14 13:12:38"
+        },
+        {
+          "epoch": 14,
+          "time": "2026-07-14 13:24:22"
+        },
+        {
+          "epoch": 15,
+          "time": "2026-07-14 13:36:03"
+        },
+        {
+          "epoch": 16,
+          "time": "2026-07-14 13:47:44"
+        },
+        {
+          "epoch": 17,
+          "time": "2026-07-14 13:59:26"
+        },
+        {
+          "epoch": 18,
+          "time": "2026-07-14 14:11:10"
+        },
+        {
+          "epoch": 19,
+          "time": "2026-07-14 14:22:52"
+        }
+      ],
+      "source_kind": "epoch_summary.jsonl（逐轮摘要）中的 epoch 与 time 字段",
+      "interpretation": "相邻轮末时间戳的间隔包含该轮流水线开销，不是独立算子耗时或跨设备性能结论。"
+    },
+    {
+      "id": "light_affine_chamfer_ep19",
+      "source_sha256": "438a39137b6f55827708e47b9a7f165621eefd8ba9ede6b815e1479b4f0b65f4",
+      "epoch_timestamps": [
+        {
+          "epoch": 0,
+          "time": "2026-07-14 14:34:40"
+        },
+        {
+          "epoch": 1,
+          "time": "2026-07-14 14:46:29"
+        },
+        {
+          "epoch": 2,
+          "time": "2026-07-14 14:58:13"
+        },
+        {
+          "epoch": 3,
+          "time": "2026-07-14 15:10:00"
+        },
+        {
+          "epoch": 4,
+          "time": "2026-07-14 15:21:45"
+        },
+        {
+          "epoch": 5,
+          "time": "2026-07-14 15:33:32"
+        },
+        {
+          "epoch": 6,
+          "time": "2026-07-14 15:45:20"
+        },
+        {
+          "epoch": 7,
+          "time": "2026-07-14 15:57:03"
+        },
+        {
+          "epoch": 8,
+          "time": "2026-07-14 16:08:50"
+        },
+        {
+          "epoch": 9,
+          "time": "2026-07-14 16:20:34"
+        },
+        {
+          "epoch": 10,
+          "time": "2026-07-14 16:32:21"
+        },
+        {
+          "epoch": 11,
+          "time": "2026-07-14 16:44:08"
+        },
+        {
+          "epoch": 12,
+          "time": "2026-07-14 16:55:53"
+        },
+        {
+          "epoch": 13,
+          "time": "2026-07-14 17:07:40"
+        },
+        {
+          "epoch": 14,
+          "time": "2026-07-14 17:19:24"
+        },
+        {
+          "epoch": 15,
+          "time": "2026-07-14 17:31:09"
+        },
+        {
+          "epoch": 16,
+          "time": "2026-07-14 17:42:54"
+        },
+        {
+          "epoch": 17,
+          "time": "2026-07-14 17:54:39"
+        },
+        {
+          "epoch": 18,
+          "time": "2026-07-14 18:06:24"
+        },
+        {
+          "epoch": 19,
+          "time": "2026-07-14 18:18:09"
+        }
+      ],
+      "source_kind": "epoch_summary.jsonl（逐轮摘要）中的 epoch 与 time 字段",
+      "interpretation": "相邻轮末时间戳的间隔包含该轮流水线开销，不是独立算子耗时或跨设备性能结论。"
+    }
+  ]
+}

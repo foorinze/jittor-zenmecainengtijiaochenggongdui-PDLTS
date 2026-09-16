@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "scope": "Jittor CPU 合成小点云；隔离 DCD 导入，检查 A/B 默认损失与梯度及禁用配置",
+  "python": "3.9.25",
+  "system": "Linux",
+  "sources": [
+    {
+      "path": "validation/check_release_models.py",
+      "sha256": "651e44eec07f840fd2cc67de9fb3c70a7428247700224cf95fb898983c3a0e4a"
+    },
+    {
+      "path": "a_board/starter_code/src/model/pdlts_light/system.py",
+      "sha256": "e4b552384f31e47ea04c6719173259577c93786caf68171db152607e663976ab"
+    },
+    {
+      "path": "a_board/starter_code/src/model/pdlts_light/losses/__init__.py",
+      "sha256": "d514e7f5589c6b7139561ff42ae10053db2969ea4671ad0c2c6c3890d86cfd36"
+    },
+    {
+      "path": "b_board/starter_code/src/model/pdlts_light/system.py",
+      "sha256": "e683f763eae6c16b41ff42dc46e60424f2abbb184586a0f751be89357f9a6926"
+    },
+    {
+      "path": "b_board/starter_code/src/model/pdlts_light/losses/__init__.py",
+      "sha256": "d514e7f5589c6b7139561ff42ae10053db2969ea4671ad0c2c6c3890d86cfd36"
+    }
+  ],
+  "boards": [
+    {
+      "board": "a_final",
+      "losses": {
+        "chamfer": 0.0005532490322366357,
+        "l2": 0.00027662451611831784
+      },
+      "weights_checked": 199,
+      "weights_with_nonzero_gradient": 145,
+      "finite_nonzero_gradient": true,
+      "excluded_mode_rejected": true,
+      "dcd_module_not_imported": true,
+      "passed": true
+    },
+    {
+      "board": "b_final",
+      "losses": {
+        "chamfer": 0.0005532490322366357,
+        "l2": 0.00027662451611831784
+      },
+      "weights_checked": 199,
+      "weights_with_nonzero_gradient": 145,
+      "finite_nonzero_gradient": true,
+      "excluded_mode_rejected": true,
+      "dcd_module_not_imported": true,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

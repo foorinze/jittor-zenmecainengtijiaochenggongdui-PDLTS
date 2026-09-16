@@ -1,0 +1,10 @@
+__target__: pdlts_light
+
+# 第一阶段训练 system。checkpoint 落在 run 目录的 checkpoints/ 下：
+#   pdlts_light_<epoch>.pkl        模型权重，用于推理或下一阶段热启动
+#   pdlts_light_<epoch>.train.pkl  优化器/调度器状态，用于中断后严格续训
+#
+# run_tag / run_id 一律由 task 配置提供，此处不写死。
+
+ckpt_save_name: pdlts_light
+start_epoch: 0

@@ -1,0 +1,6 @@
+__target__: pdlts_light_predict
+
+# 通用整云推理 system。正式榜单流程会在 b_final 配置中覆盖 run_tag 和覆盖率参数。
+seed_k_l1: 12
+seed_k_l2: 16
+threshold_yellow: 0.0001

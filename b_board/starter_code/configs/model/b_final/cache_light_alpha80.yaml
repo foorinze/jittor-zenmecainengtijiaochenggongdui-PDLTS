@@ -1,0 +1,15 @@
+__target__: PDLTSLight
+CONFIG_VERSION: b_final
+
+pc_channel: 3
+aug_channel: 48
+n_injector: 12
+cut_channel: 24
+nflow_module: 12
+num_neighbors: 32
+mlgc_hidden: 64
+coupling_hidden: 64
+log_scale_clamp: 0.1
+
+# 只控制生成 first-pass cache（第一遍缓存）时的显存分批，不改变网络参数或 patch 集合。
+predict_seed_k_alpha: 80

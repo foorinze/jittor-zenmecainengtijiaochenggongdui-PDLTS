@@ -1,0 +1,19 @@
+# PDLTS Light mock_b predict data (B 榜自建评测集)
+# 样本: dataset/mock_test_b/shapenet/00000000/<btrain_hash>/noisy.npy
+# 由 B 榜训练对生成脚本生成，
+# 噪声 Laplace scale 按 p1 标定反演的 B 榜隐含区间设定（非 A 榜区间）。
+
+predict_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 0
+  datapath:
+    input_dataset_dir: ../dataset/mock_test_b
+    use_prob: False
+    loader: npy
+    data_name: noisy.npy
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/mock_b.txt, 1.0],
+      ]

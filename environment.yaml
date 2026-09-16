@@ -1,0 +1,33 @@
+# 三维点云去噪 —— conda 环境定义
+#
+# 对应已测环境：Ubuntu 22.04 + NVIDIA 4090 + CUDA 12.2 + Python 3.9.25
+# 云端完整验证：CUDA 12.2 + Python 3.9.25 + Jittor 1.3.10.0
+# 创建：
+#   conda env create -f environment.yaml
+#   conda activate pcdenoise
+#
+# 与 requirements.txt 等价，二者选一即可。
+# Jittor 首次 import 会即时编译算子，需要 g++ 与 CUDA toolkit 在 PATH 上。
+# 训练与推理全程只用 Jittor，不依赖 PyTorch。
+
+name: pcdenoise
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.9.25
+  - pip=24.0
+  # 编译工具链：Jittor 即时编译算子时需要
+  - gcc_linux-64=11
+  - gxx_linux-64=11
+  - pip:
+      - jittor==1.3.10
+      - numpy==1.24.4
+      - scipy==1.10.1
+      - omegaconf==2.3.0
+      - tqdm==4.66.4
+      - trimesh==4.4.3
+      # 只在跑本地评测脚本时需要，训练与推理不依赖
+      - point-cloud-utils==0.30.4

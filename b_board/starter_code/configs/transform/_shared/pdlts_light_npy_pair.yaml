@@ -1,0 +1,24 @@
+# PDLTS npy_pair 训练 transform 配置
+#
+# 适用场景：输入已是预生成的 clean.npy/noisy.npy 点云对，
+#   由 generate_b_training_pairs.py 生成（50000 pts，已归一化，已加 B 榜噪声）。
+#
+# 与 _shared/pdlts_light.yaml 的区别（跳过 mesh 相关步骤）：
+#   - AugmentSample    跳过（已从 mesh 采样，50000 pts 存盘）
+#   - AugmentNormalizePC  跳过（生成时已做 bbox-unit-sphere 归一化）
+#   - AugmentAddNoise  跳过（生成时已加 Laplace 噪声，sigma 标定为 B 榜范围）
+#   - AugmentLinear    跳过（只变换 asset.vertices，npy_pair 无 mesh，等同 no-op）
+#   - AugmentPatch     保留，与 _shared/pdlts_light.yaml 完全一致
+#
+# 注意：无旋转/缩放增广；如需增广，需扩展 AugmentLinear 支持 sampled_vertices。
+
+train_transform:
+  augments:
+    - __target__: patch
+      patch_size: 1024
+      num_patches: 1
+      train_cvm_network: False
+
+# predict 走 noisy.npy，不做 patch 切分（由 predict system 自行处理）
+predict_transform:
+  augments: []

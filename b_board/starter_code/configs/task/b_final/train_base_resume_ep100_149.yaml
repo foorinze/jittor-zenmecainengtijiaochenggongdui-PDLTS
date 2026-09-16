@@ -1,0 +1,22 @@
+mode: train
+debug: False
+CONFIG_VERSION: b_final
+
+components:
+  data: b_final/train_b_generated
+  transform: _shared/pdlts_light_npy_pair
+  system: b_final/train_base_resume_ep100_149
+  model: _shared/pdlts_light
+
+loss:
+  chamfer: 1.0
+  l2: 0.1
+
+optimizer:
+  __target__: adam
+  lr: 0.0005
+
+trainer:
+  epochs: 50
+
+resume_state: __SET_BY_TRAIN_BASE_PIPELINE__

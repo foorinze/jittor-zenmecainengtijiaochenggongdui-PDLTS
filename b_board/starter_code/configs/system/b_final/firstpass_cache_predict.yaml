@@ -1,0 +1,8 @@
+__target__: pdlts_light_predict
+CONFIG_VERSION: b_final
+
+# 生成第二遍 specialist（专训模型）训练所需的 first-pass cache（第一遍缓存）。
+run_tag: b_final_firstpass_cache
+seed_k_l1: 12
+seed_k_l2: 16
+threshold_yellow: 0.0001

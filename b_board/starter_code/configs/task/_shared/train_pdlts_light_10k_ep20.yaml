@@ -1,0 +1,23 @@
+mode: train
+debug: False
+
+# PDLTS Light 本地首训: 10k 样本 / batch=8 / 20 epochs.
+# 速度诊断确认 2.3 it/s (54s/epoch@1k), 10k 满配约 4.5 分钟/epoch.
+# 此配置训练 20 epoch。
+
+components:
+  data: pdlts_light_10k_b8
+  transform: pdlts_light
+  system: pdlts_light
+  model: pdlts_light
+
+loss:
+  chamfer: 1.0
+  l2: 0.1
+
+optimizer:
+  __target__: adam
+  lr: 0.0005
+
+trainer:
+  epochs: 20

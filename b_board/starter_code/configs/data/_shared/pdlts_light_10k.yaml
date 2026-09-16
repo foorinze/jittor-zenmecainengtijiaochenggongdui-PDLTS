@@ -1,0 +1,38 @@
+# PDLTS Light 10k 训练 data（速度诊断与本地首训用）
+# 路径口径使用 PDLTS 统一入口: ../dataset/train
+# num_files=10000: train.txt 有 15733 行, 第一次长训取 10k 看收敛趋势
+# 全量训练配置见 pdlts_light_full15k_b8.yaml。
+
+data_name: &data_name models/model_normalized.obj
+loader: &loader obj
+
+train_dataset:
+  shuffle: True
+  batch_size: 16
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: True
+    num_files: 10000
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/train.txt, 1.0],
+      ]
+
+validate_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: False
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/validate.txt, 1.0],
+      ]

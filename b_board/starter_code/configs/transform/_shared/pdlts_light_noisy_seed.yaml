@@ -1,0 +1,49 @@
+# 消融实验: predict-aligned augment（noisy seed 中心化）
+# 与推理时的 patch_denoise 中心化方式一致（减 noisy seed）
+
+train_transform:
+  augments:
+    - __target__: sample
+      num_samples: 32768
+      num_vertex_samples: 1024
+
+    - __target__: normalize_pc
+
+    - __target__: add_noise
+      noise_std_min: 0.005
+      noise_std_max: 0.020
+
+    - __target__: linear
+      scale: [0.8, 1.2]
+      rotate_x_range: [-180, 180]
+      rotate_y_range: [-180, 180]
+      rotate_z_range: [-180, 180]
+      scale_p: 0.5
+      rotate_p: 0.5
+
+    - __target__: patch
+      patch_size: 1024
+      num_patches: 1
+      train_cvm_network: False
+      use_noisy_seed_center: True
+
+validate_transform:
+  augments:
+    - __target__: sample
+      num_samples: 32768
+      num_vertex_samples: 1024
+
+    - __target__: normalize_pc
+
+    - __target__: add_noise
+      noise_std_min: 0.005
+      noise_std_max: 0.020
+
+    - __target__: patch
+      patch_size: 1024
+      num_patches: 1
+      train_cvm_network: False
+      use_noisy_seed_center: True
+
+predict_transform:
+  augments: []

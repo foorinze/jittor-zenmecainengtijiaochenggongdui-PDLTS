@@ -1,0 +1,45 @@
+{
+  "review_date": "2026-09-16",
+  "scope": "配置声明、当前构造接线和三份历史训练参数清单的交叉核查",
+  "sources": [
+    {
+      "role": "declared_model",
+      "sha256": "f4d5f1f2b14907942a0f30aceda1881cf6a144ead06c3085f9bdd067118a28af",
+      "declared_structure": "imonotone"
+    },
+    {
+      "role": "wrapper",
+      "sha256": "528f7a63e92018099375c7d9451a3948cc2af4474bf2dce2ca254d17a34254c4",
+      "constructor_forwards_structure_selector": false
+    },
+    {
+      "role": "network",
+      "sha256": "cc062126bdd03ca9b2e35657f363ceff037d680ce0e913e6e171f899afcff47a",
+      "default_structure": "affine_coupling"
+    },
+    {
+      "role": "run_20ep",
+      "sha256": "7453d225d083ebfb71b506ecff29f8f9f13f5a1af8fb6ba47f9cba391f87c35a",
+      "affine_chain1_parameter_mentions": 72,
+      "monotone_nnet_parameter_mentions": 0
+    },
+    {
+      "role": "run_cd_only",
+      "sha256": "dbd1d4045621d1eeeab2809388f7cf9073c82203ed7be70e6aaffe7d97fa5e65",
+      "affine_chain1_parameter_mentions": 72,
+      "monotone_nnet_parameter_mentions": 0
+    },
+    {
+      "role": "run_100ep",
+      "sha256": "5727625ce9534cd32e6b8f0b40f1850f8984293c597ccbd7d9f089056dcc4e20",
+      "affine_chain1_parameter_mentions": 72,
+      "monotone_nnet_parameter_mentions": 0
+    }
+  ],
+  "conclusion": "名义单调运行与参数清单不符，暂停20/100轮结构因果解释；保留原始分数。",
+  "limitations": [
+    "未核验这些历史权重内部的完整结构及各次推理严格加载链。",
+    "当前构造源码不能单独证明每次历史运行均使用该版本；参数快照也可能存在记录污染。",
+    "不能据此断言全部历史单调实验均为仿射实现。"
+  ]
+}

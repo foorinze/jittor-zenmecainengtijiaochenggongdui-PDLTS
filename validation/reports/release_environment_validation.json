@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-06",
+  "scope": "Linux Python 3.9.25 下的依赖解析；未创建全新 conda 环境或重跑完整训练",
+  "command": "python -m pip install --dry-run --ignore-installed --no-cache-dir --report pip_resolution.json -r requirements.txt",
+  "exit_code": 0,
+  "environment": {
+    "python": "3.9.25",
+    "system": "Linux",
+    "machine": "x86_64",
+    "runtime": "WSL2"
+  },
+  "sources": [
+    {
+      "path": "requirements.txt",
+      "sha256": "223420f767fafe796691c69d5a79b7e1d30a113e1be5e5352f2146f50337f862"
+    },
+    {
+      "path": "environment.yaml",
+      "sha256": "579bd3a95844c5b37d0cce7128ec321fe87604121e4d841c3e5f7a78fbd2c59a"
+    }
+  ],
+  "raw_pip_report_sha256": "73c0f5ceff43f2051f0d73c6ecd69a393d01c1725bc883862df0268efa623736",
+  "resolved_packages": {
+    "jittor": "1.3.10.0",
+    "numpy": "1.24.4",
+    "scipy": "1.10.1",
+    "omegaconf": "2.3.0",
+    "tqdm": "4.66.4",
+    "trimesh": "4.4.3",
+    "point-cloud-utils": "0.30.4",
+    "antlr4-python3-runtime": "4.9.3",
+    "PyYAML": "6.0.3",
+    "astunparse": "1.6.3",
+    "six": "1.17.0",
+    "wheel": "0.48.0",
+    "packaging": "26.3",
+    "pillow": "11.3.0"
+  },
+  "passed": true
+}

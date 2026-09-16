@@ -1,0 +1,28 @@
+__target__: PDLTSLight
+
+# 网络结构。两个阶段（基础去噪网络、精修网络）用的是同一套结构，
+# 差别只在训练目标与训练数据，不在结构参数。
+
+# ----- 主干 -----
+# pc_channel     输入坐标维度
+# aug_channel    特征提取分支输出的增广通道数，与坐标拼接后进入流模型
+# n_injector     特征注入层数，每层向流模型注入一次局部几何特征
+# cut_channel    噪声分离时置零的尾部通道数
+# nflow_module   可逆流模块层数
+# num_neighbors  局部特征提取的近邻数
+pc_channel: 3
+aug_channel: 48
+n_injector: 12
+cut_channel: 24
+nflow_module: 12
+num_neighbors: 32
+
+mlgc_hidden: 64
+coupling_hidden: 64
+log_scale_clamp: 0.1
+
+# ----- 推理参数 -----
+# predict_seed_k_alpha 控制 patch 分几批送进网络：batch_size = ceil(K / alpha)。
+# seed_k=12 时整云切出 K≈586 个 patch，alpha=30 对应单批 ≤29 个 patch。
+# 这个参数只影响显存峰值，不改变数值结果。
+predict_seed_k_alpha: 30

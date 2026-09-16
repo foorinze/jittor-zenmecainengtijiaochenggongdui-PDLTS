@@ -1,0 +1,25 @@
+CONFIG_VERSION: a_final
+mode: predict
+debug: False
+
+# 第一阶段模型在官方 test_noisy 200 个样本上的推理。
+# 这一步有两个用途：
+#   1. 它本身是第一阶段的官方结果；
+#   2. 它的输出是第二阶段（精修网络）官方推理的输入。
+#
+# 输出：../outputs/predictions/a_final/repro_base_official/pred/shapenet/<cls>/<id>/denoised.npy
+
+load_ckpt: ../outputs/runs/a_final/repro_base_train/checkpoints/pdlts_light_99.pkl
+run_id: repro_base_official
+run_tag: repro_base_official
+
+components:
+  data: pdlts_light_official
+  transform: pdlts_light
+  system: pdlts_light_predict
+  model: pdlts_light
+
+writer:
+  __target__: pdlts_light
+  save_dir: __overridden_by_system__
+  save_name: denoised

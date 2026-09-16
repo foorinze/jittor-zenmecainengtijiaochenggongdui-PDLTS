@@ -1,0 +1,8 @@
+__target__: pdlts_light_predict
+CONFIG_VERSION: b_final
+
+# B 榜最终级联链第一遍：base（基础模型）checkpoint（检查点）推理。
+run_tag: b_final_pass1_base_official_b
+seed_k_l1: 12
+seed_k_l2: 24
+threshold_yellow: 0.0001

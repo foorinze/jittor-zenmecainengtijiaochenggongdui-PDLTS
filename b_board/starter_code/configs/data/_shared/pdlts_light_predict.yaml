@@ -1,0 +1,19 @@
+# PDLTS Light 官方推理 data 配置.
+#
+# 输入: dataset/test_noisy/shapenet/<cls>/<id>/noisy.npy   (200 个)
+# 输出: 由 VMWriter (复用) 或自写 writer 写到 outputs/predictions/<stage>/<run_id>/pred/shapenet/.../denoised.npy
+
+predict_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 0
+  datapath:
+    input_dataset_dir: ../dataset/test_noisy
+    use_prob: False
+    loader: npy
+    data_name: noisy.npy
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/test.txt, 1.0],
+      ]

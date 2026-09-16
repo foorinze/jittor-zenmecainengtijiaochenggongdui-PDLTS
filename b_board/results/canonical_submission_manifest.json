@@ -1,0 +1,36 @@
+{
+  "artifact": "final_submission_summary",
+  "created_at": "2026-08-15 01:16:09",
+  "public_stage": "B 榜最终提交打包摘要",
+  "predict_artifact": "results/canonical_cascade_prediction_manifest.json",
+  "n_samples": 200,
+  "shape_guard_bad": 0,
+  "verdict_at_pack": "green",
+  "force": false,
+  "completeness_check": true,
+  "predict_manifest_summary": {
+    "n_samples": 200,
+    "n_missing_total": 0,
+    "n_missing_samples": 0,
+    "max_missing_ratio": 0.0,
+    "levels_count": {
+      "L1": 199,
+      "L2": 1
+    },
+    "degraded_samples": [],
+    "verdict": "green",
+    "threshold_yellow": 0.0001,
+    "postselect_enabled_samples": 0,
+    "predict_return_pull_sidecars": false,
+    "sidecar_confidence_w_samples": 0,
+    "sidecar_pull_norm_samples": 0
+  },
+  "official_result_zip": {
+    "file": "result.zip",
+    "included_in_public_repo": false,
+    "bytes": 111234354,
+    "sha256": "ce60a7ce52a59c918d9dc6bd0a0a2b845f758ca38fc8f7130092e653985bf81f",
+    "note": "公开复现会在 code/outputs/submissions/b_final/<submit_id>/ 下重新生成 result.zip。"
+  },
+  "source_note": "原始内部运行路径已在公开版脱敏；完整原始 manifest 保留在最终提交包和内部迁移审计中。"
+}

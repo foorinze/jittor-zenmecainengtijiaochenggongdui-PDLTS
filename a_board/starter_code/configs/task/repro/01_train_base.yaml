@@ -1,0 +1,30 @@
+CONFIG_VERSION: a_final
+mode: train
+debug: False
+
+# 第一阶段：基础去噪网络，从零训练 100 epoch。
+# 数据来自 dataset/train 的原始网格，每个 epoch 在线采样 + 在线加噪，
+# 不读取任何预生成的固定 noisy 文件。
+#
+# 输出：../outputs/runs/a_final/repro_base_train/checkpoints/pdlts_light_<N>.pkl
+# 复现用的是 pdlts_light_99.pkl（第 100 个 epoch，0-indexed）。
+
+run_id: repro_base_train
+run_tag: repro_base_train
+
+components:
+  data: pdlts_light_full15k_b8
+  transform: pdlts_light
+  system: pdlts_light_train
+  model: pdlts_light
+
+loss:
+  chamfer: 1.0
+  l2: 0.1
+
+optimizer:
+  __target__: adam
+  lr: 0.0005
+
+trainer:
+  epochs: 100

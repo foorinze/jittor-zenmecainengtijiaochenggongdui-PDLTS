@@ -1,0 +1,23 @@
+mode: train
+debug: False
+
+# 速度诊断配置 #1: batch=8, 1k 样本, 3 epochs.
+# 目标: 测量实际 iter/s 速度 + 看 loss 三 epoch 是否下降趋势.
+# 不做分数评测.
+
+components:
+  data: pdlts_light_diag_1k
+  transform: pdlts_light
+  system: pdlts_light
+  model: pdlts_light
+
+loss:
+  chamfer: 1.0
+  l2: 0.1
+
+optimizer:
+  __target__: adam
+  lr: 0.0005
+
+trainer:
+  epochs: 3

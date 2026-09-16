@@ -1,0 +1,6 @@
+__target__: pdlts_light
+
+# 通用训练 system。正式 B 榜流程使用 configs/system/b_final/ 下的显式配置；
+# 本文件用于最小训练、冒烟验证和失败实验复盘。
+ckpt_save_name: pdlts_light
+start_epoch: 0

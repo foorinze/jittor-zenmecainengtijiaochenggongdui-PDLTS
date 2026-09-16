@@ -1,0 +1,23 @@
+mode: train
+debug: False
+
+# 速度诊断配置 #2: patch=512, k=16, 1k 样本, 3 epochs.
+# 比 #1 更进一步显存释放 + 更快 forward.
+# 如果 #1 就够快，此步可跳.
+
+components:
+  data: pdlts_light_diag_1k
+  transform: pdlts_light_diag_patch512
+  system: pdlts_light
+  model: pdlts_light_diag_patch512
+
+loss:
+  chamfer: 1.0
+  l2: 0.1
+
+optimizer:
+  __target__: adam
+  lr: 0.0005
+
+trainer:
+  epochs: 3

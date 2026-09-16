@@ -1,0 +1,36 @@
+# PDLTS Light 速度诊断 data: 1000 样本 (速度诊断阶段)
+# 目标: 快速看 loss 是否下降 + 每 iter 速度
+
+data_name: &data_name models/model_normalized.obj
+loader: &loader obj
+
+train_dataset:
+  shuffle: True
+  batch_size: 8            # 从 16 降到 8, 释放显存
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: True
+    num_files: 1000
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/train.txt, 1.0],
+      ]
+
+validate_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: False
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/validate.txt, 1.0],
+      ]

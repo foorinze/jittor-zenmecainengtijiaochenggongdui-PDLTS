@@ -1,0 +1,36 @@
+mode: predict
+debug: False
+
+# PDLTS Light official predict task .
+#
+# 走 PDLTSLightPredictSystem, 完整日志契约 + 推理落盘规则 三层策略:
+#   L1: seed_k=12 默认 (coverage sweep 后 200 样本 100% zero-miss)
+#   L2: L1 漏点则 seed_k=16 重试 (sweep 下不会触发, 留作保险)
+#   L3: L2 仍漏点接受 noisy 回填, 记入 degraded_samples
+#   绿/黄/红灯判定: n_missing_total==0 / max_missing_ratio<1e-4 / 超阈值
+#
+# 输出:
+#   outputs/predictions/<stage>/<run_id>/
+#     command.sh / config.yaml / env.txt / git_commit.txt / manifest.json
+#     logs/predict.log
+#     pred/shapenet/<cls>/<id>/denoised.npy
+#
+# 运行方式:
+#   cd starter_code
+#   # 替换 load_ckpt 为训练运行目录中的 checkpoint
+#   python run.py --task configs/task/predict_pdlts_light.yaml
+
+load_ckpt: REPLACE_WITH_YOUR_CKPT.pkl
+
+components:
+  data: pdlts_light_predict
+  transform: pdlts_light
+  system: pdlts_light_predict
+  model: pdlts_light
+
+writer:
+  __target__: pdlts_light
+  # save_dir 会被 PDLTSLightPredictSystem 强制覆盖为 run_dir/pred
+  # (这里写什么都行, 但保留字段让 writer 构造不报错).
+  save_dir: __overridden_by_system__
+  save_name: denoised

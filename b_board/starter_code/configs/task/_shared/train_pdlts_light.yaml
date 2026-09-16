@@ -1,0 +1,26 @@
+mode: train
+debug: False
+
+# PDLTS Light 完整训练 task (云端长训用).
+# 对应 run: outputs/runs/<stage>/<run_id>/  (由 configs/system/pdlts_light.yaml 生成)
+#
+# 当前基础方案只保证 pipeline 能跑通 + 第一组 mock 分数; 不调参冲分.
+# 调参 (epoch, batch, lr, num_patches) 延到后续阶段.
+
+components:
+  data: pdlts_light
+  transform: pdlts_light
+  system: pdlts_light
+  model: pdlts_light
+
+# 基础 surrogate loss (非论文原训练目标, 对照结果见 experiments/overview.md).
+loss:
+  chamfer: 1.0
+  l2: 0.1
+
+optimizer:
+  __target__: adam
+  lr: 0.0005
+
+trainer:
+  epochs: 50

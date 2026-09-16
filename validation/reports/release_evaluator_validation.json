@@ -1,0 +1,287 @@
+{
+  "schema_version": 1,
+  "scope": "合成数据上的评测契约验证，不是模型评分或线上成绩",
+  "python": "3.13.9",
+  "system": "Windows",
+  "boards": [
+    {
+      "board": "a_final",
+      "evaluator": "a_board/starter_code/evaluate_mock.py",
+      "sha256": "7cbf21c490832365171621745e65e84b270bfbae038760ebec440acd747e54ef",
+      "p2s_backend": "numpy-triangle-fallback",
+      "cases": [
+        {
+          "case": "clean",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 2,
+            "missing_predictions": 0,
+            "shape_errors": 0,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 100.0,
+            "p2s_pred_mean": 0.0,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 100.0,
+            "final_score": 100.0
+          }
+        },
+        {
+          "case": "noisy",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 2,
+            "missing_predictions": 0,
+            "shape_errors": 0,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0589,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 0.0,
+            "p2s_pred_mean": 0.0144,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 0.0,
+            "final_score": 0.0
+          }
+        },
+        {
+          "case": "missing_prediction",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 1,
+            "missing_predictions": 1,
+            "shape_errors": 0,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 50.0,
+            "p2s_pred_mean": 0.0,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 50.0,
+            "final_score": 50.0
+          }
+        },
+        {
+          "case": "shape_error",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 2,
+            "missing_predictions": 0,
+            "shape_errors": 1,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 50.0,
+            "p2s_pred_mean": 0.0,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 50.0,
+            "final_score": 50.0
+          }
+        },
+        {
+          "case": "nonfinite",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 2,
+            "missing_predictions": 0,
+            "shape_errors": 1,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 50.0,
+            "p2s_pred_mean": 0.0,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 50.0,
+            "final_score": 50.0
+          }
+        },
+        {
+          "case": "missing_mesh",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_norm",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_clean",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_noisy",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_clean_scan",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_noisy_scan",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        }
+      ]
+    },
+    {
+      "board": "b_final",
+      "evaluator": "b_board/starter_code/evaluate_mock.py",
+      "sha256": "e5aa9e5c022b8c80927b1562f00ae198f1a8588baa73dbc2ff95bffe30ecd79a",
+      "p2s_backend": "numpy-triangle-fallback",
+      "cases": [
+        {
+          "case": "clean",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 2,
+            "missing_predictions": 0,
+            "shape_errors": 0,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 100.0,
+            "p2s_pred_mean": 0.0,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 100.0,
+            "final_score": 100.0
+          }
+        },
+        {
+          "case": "noisy",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 2,
+            "missing_predictions": 0,
+            "shape_errors": 0,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0589,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 0.0,
+            "p2s_pred_mean": 0.0144,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 0.0,
+            "final_score": 0.0
+          }
+        },
+        {
+          "case": "missing_prediction",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 1,
+            "missing_predictions": 1,
+            "shape_errors": 0,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 50.0,
+            "p2s_pred_mean": 0.0,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 50.0,
+            "final_score": 50.0
+          }
+        },
+        {
+          "case": "shape_error",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 2,
+            "missing_predictions": 0,
+            "shape_errors": 1,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 50.0,
+            "p2s_pred_mean": 0.0,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 50.0,
+            "final_score": 50.0
+          }
+        },
+        {
+          "case": "nonfinite",
+          "passed": true,
+          "exit_code": 0,
+          "metrics": {
+            "total_samples": 2,
+            "valid_predictions": 2,
+            "missing_predictions": 0,
+            "shape_errors": 1,
+            "skipped_mesh_norm": 0,
+            "cd_pred_mean": 0.0,
+            "cd_noisy_mean": 0.0589,
+            "cd_score": 50.0,
+            "p2s_pred_mean": 0.0,
+            "p2s_noisy_mean": 0.0144,
+            "p2s_score": 50.0,
+            "final_score": 50.0
+          }
+        },
+        {
+          "case": "missing_mesh",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_norm",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_clean",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_noisy",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_clean_scan",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        },
+        {
+          "case": "missing_noisy_scan",
+          "passed": true,
+          "exit_code": 1,
+          "metrics": {}
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

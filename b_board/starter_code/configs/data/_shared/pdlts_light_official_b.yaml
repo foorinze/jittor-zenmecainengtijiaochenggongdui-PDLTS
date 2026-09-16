@@ -1,0 +1,20 @@
+# PDLTS Light official test_noisy_b predict data (B 榜)
+# 200 个样本: dataset/test_noisy_b/shapenet/00000000/<btest_n>/noisy.npy
+# （原注释写 199，系 wc -l 对无末换行 datalist 少数 1；真值 grep -c . = 200，与提交件 manifest 的 n_samples 一致）
+# 与 pdlts_light_official.yaml 对称，仅切换数据集目录与 datalist。
+# B 榜类别信息被抹平为单一伪类别 00000000，因此按类分层在此不可用。
+
+predict_dataset:
+  shuffle: False
+  batch_size: 1
+  num_workers: 0
+  datapath:
+    input_dataset_dir: ../dataset/test_noisy_b
+    use_prob: False
+    loader: npy
+    data_name: noisy.npy
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/test_b.txt, 1.0],
+      ]

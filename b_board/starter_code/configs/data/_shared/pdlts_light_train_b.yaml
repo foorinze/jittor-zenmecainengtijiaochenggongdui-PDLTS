@@ -1,0 +1,23 @@
+# B 榜 npy-pair 训练数据配置
+#
+# loader: npy_pair — 使用预生成的 clean.npy/noisy.npy 训练对
+# 样本数: 19528（网格健康检查后实际成功数）
+# 数据根: dataset/train_b（从 starter_code/ 执行时的相对路径）
+# datalist: 由 generate_b_training_pairs.py 生成后重建
+#
+# 注意: data_name 必须显式设为 null；
+#   否则 Datapath.parse() 默认拼接 raw_data.npz，NpyPairLazyAsset 找不到路径。
+
+train_dataset:
+  shuffle: True
+  batch_size: 8
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train_b
+    loader: npy_pair
+    data_name: null
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/train_b_generated.txt, 1.0],
+      ]

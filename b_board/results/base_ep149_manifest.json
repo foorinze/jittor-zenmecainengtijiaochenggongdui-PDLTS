@@ -1,0 +1,22 @@
+{
+  "artifact": "base_ep149_training_summary",
+  "created_at": "2026-08-12 14:42:36",
+  "kind": "train",
+  "public_stage": "B 榜第一遍 base（基础模型）训练摘要",
+  "checkpoint": "checkpoints/base_ep149.pkl",
+  "strict_resume": {
+    "available": true,
+    "latest_epoch": 149,
+    "note": "训练从 epoch 100 严格续训到 epoch 149；公开复现入口见 reproduction/REPRODUCTION_GUIDE.md。"
+  },
+  "summary": {
+    "first_logged_epoch": 100,
+    "first_logged_loss_sum_mean": 0.00021568667488632397,
+    "last_logged_epoch": 149,
+    "last_logged_loss_sum_mean": 0.00021375550569826984,
+    "trainable_param_count": 398,
+    "frozen_param_restore_enabled": false,
+    "frozen_param_restore_count": 0
+  },
+  "source_note": "原始内部运行路径已在公开版脱敏；完整原始 manifest 保留在最终提交包和内部迁移审计中。"
+}

@@ -1,0 +1,436 @@
+{
+  "schema_version": 1,
+  "scope": "86 条 A 榜历史记录的唯一主分类；不等于86个独立实验",
+  "records": [
+    {
+      "id": "A-SELECT-01",
+      "primary_topic": "method_comparison",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-SELECT-02",
+      "primary_topic": "method_comparison",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-SELECT-03",
+      "primary_topic": "method_comparison",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-SELECT-04",
+      "primary_topic": "method_comparison",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-SELECT-05",
+      "primary_topic": "method_comparison",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-SELECT-06",
+      "primary_topic": "method_comparison",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-FND-01",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-FND-02",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-FND-03",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-FND-04",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-FND-05",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-FND-06",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-DATA-01",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-DATA-02",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-DATA-03",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-DATA-04",
+      "primary_topic": "data_and_evaluation",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-01",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-02",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-03",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-04",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-05",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-06",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-07",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-08",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-09",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-10",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-11",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-LOSS-12",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ANCHOR-01",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ANCHOR-02",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ANCHOR-03",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ANCHOR-04",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ANCHOR-05",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-01",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-02",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-03",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-04",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-05",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-06",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-07",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-08",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-09",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ASSIGN-10",
+      "primary_topic": "losses",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-01",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-02",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-03",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-04",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-05",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-06",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-07",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-08",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-09",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-10",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-ARCH-11",
+      "primary_topic": "architecture",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-01",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-02",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-03",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-04a",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-04b",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-04c",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-04d",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-04e",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-05",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-CASCADE-06",
+      "primary_topic": "training_and_cascade",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-BRIDGE-01",
+      "primary_topic": "geometry",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-BRIDGE-02",
+      "primary_topic": "geometry",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-BRIDGE-03",
+      "primary_topic": "geometry",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-BRIDGE-04",
+      "primary_topic": "geometry",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-BRIDGE-05",
+      "primary_topic": "geometry",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-BRIDGE-06",
+      "primary_topic": "geometry",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-01",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-02",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-03",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-04",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-05",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-06",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-07",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-08",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-09",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-10",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-11",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-12",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-13",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-14",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-15",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    },
+    {
+      "id": "A-TRANSPORT-16",
+      "primary_topic": "oracle_and_selection",
+      "record": "a_board_atlas.md"
+    }
+  ]
+}

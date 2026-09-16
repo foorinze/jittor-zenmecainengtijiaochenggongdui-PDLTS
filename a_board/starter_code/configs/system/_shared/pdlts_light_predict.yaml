@@ -1,0 +1,16 @@
+__target__: pdlts_light_predict
+
+# 推理 system：整云 patch 切分 + 逐点拼接。
+#
+# seed_k_l1 = 12：每个点平均被 12 个 patch 覆盖，50k 点整云切成约 586 个
+#   1024 点 patch。这是部署口径，覆盖率实测在 200 个验证样本上 100% 无漏点。
+# seed_k_l2 = 16：兜底档。仅当 L1 出现漏点比例超过 threshold_yellow 时，
+#   对该样本自动重跑一次更高覆盖率的推理，正常样本永不触发。
+# threshold_yellow = 1e-4：漏点比例告警线。
+#
+# run_tag / run_id 一律由 task 配置提供，此处不写死，避免旧 run_tag 泄漏到
+# 新的输出目录名里。
+
+seed_k_l1: 12
+seed_k_l2: 16
+threshold_yellow: 0.0001

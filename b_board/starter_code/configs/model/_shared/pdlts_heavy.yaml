@@ -1,0 +1,26 @@
+__target__: PDLTSHeavy
+
+# Heavy smoke（仅对照模型）。
+# Heavy 参数在下方显式配置。
+pc_channel: 3
+aug_channel: 32
+n_injector: 10
+cut_channel: 16
+nflow_module: 10
+num_neighbors: 32
+mlgc_hidden: 64
+
+# INN (iMonotoneBlock) 参数 — source-aligned to PD-LTS PyTorch reference
+# (deflow.py: coeff=0.9, activation_fn='elu', n_exact_terms=0)
+inn_nhidden: 2
+inn_idim: 64
+inn_coeff: 0.9
+inn_sn_atol: 0.001
+inn_sn_rtol: 0.001
+geom_p: 0.5
+n_exact_terms: 0
+neumann_grad: true
+activation_fn: elu
+
+# 推理参数
+predict_seed_k_alpha: 30

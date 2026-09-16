@@ -1,0 +1,21 @@
+__target__: PDLTSLight
+
+# ----- 核心结构 (PD-LTS light argparse 真实默认) -----
+pc_channel: 3
+aug_channel: 48
+n_injector: 12
+cut_channel: 24
+nflow_module: 12
+num_neighbors: 32
+
+# ----- 当前简化后的内部 hidden (原版 FCNet idim/nhidden 对应不上, 用统一 hidden) -----
+mlgc_hidden: 64
+coupling_hidden: 64
+log_scale_clamp: 0.1
+
+# ----- 推理参数 -----
+# predict_seed_k_alpha 控制 patch 分批送网络: batch_size = ceil(K / alpha).
+# seed_k=12 下 K ≈ 586, 若 alpha=5 (旧默认) batch_size=117 会 OOM (12GB GPU);
+# alpha=30 保证 batch_size ≤ 29, 和 seed_k=3 / alpha=5 时同量级.
+# seed_k=16 (L2) K ≈ 782, alpha=30 -> batch_size=26, 仍然安全.
+predict_seed_k_alpha: 30

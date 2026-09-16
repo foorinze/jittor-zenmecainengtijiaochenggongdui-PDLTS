@@ -1,0 +1,19 @@
+# B 榜训练点云对配置。
+# `train_b_generated.txt` 由 scripts/experiments/b_final/generate_b_training_pairs.py
+# 从官方 B 榜训练 mesh 生成。
+
+CONFIG_VERSION: b_final
+
+train_dataset:
+  shuffle: True
+  batch_size: 8
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train_b
+    loader: npy_pair
+    data_name: null
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/train_b_generated.txt, 1.0],
+      ]

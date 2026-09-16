@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "scope": "隔离目录入口检查，未运行训练或推理",
+  "sources": [
+    {
+      "path": "a_board/run_all.sh",
+      "sha256": "8bb11d1f1f0486c15f0cd9ae26ab8ca4e81ca52df10584d4fb7c5b8a7417a2d9"
+    },
+    {
+      "path": "b_board/reproduce_b_final.sh",
+      "sha256": "aa6f71c4ae0ad4cb288a6fa61b499a2ba1f74ac0d4894fcdeb61718b3e73609c"
+    }
+  ],
+  "cases": [
+    {
+      "board": "b",
+      "arguments": [
+        "--help"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "expected_message": "--base-ckpt",
+      "passed": true
+    },
+    {
+      "board": "b",
+      "arguments": [
+        "--unknown"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "expected_message": "unknown argument",
+      "passed": true
+    },
+    {
+      "board": "b",
+      "arguments": [],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_message": "B 榜测试数据未找到",
+      "passed": true
+    },
+    {
+      "board": "a",
+      "arguments": [],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "expected_message": "full|infer",
+      "passed": true
+    },
+    {
+      "board": "a",
+      "arguments": [
+        "infer"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_message": "dataset/test_noisy",
+      "passed": true
+    },
+    {
+      "board": "a",
+      "arguments": [
+        "full"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "expected_message": "dataset/test_noisy",
+      "passed": true
+    },
+    {
+      "board": "a",
+      "arguments": [
+        "full"
+      ],
+      "fixture": "test data directory only",
+      "exit_code": 1,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

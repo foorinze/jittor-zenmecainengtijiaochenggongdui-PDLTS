@@ -1,0 +1,21 @@
+# PDLTS Heavy 1k 诊断 data (公开实验记录: batch 从 保守初始值的一半 起步)
+# validate_dataset 移除: Heavy 全点云推理太慢，density-loss smoke 只需训练 + 事后 mock20 eval
+
+data_name: &data_name models/model_normalized.obj
+loader: &loader obj
+
+train_dataset:
+  shuffle: True
+  batch_size: 4
+  num_workers: 8
+  datapath:
+    input_dataset_dir: ../dataset/train
+    use_prob: True
+    num_files: 1000
+    loader: *loader
+    data_name: *data_name
+    ignore_check: True
+    data_path:
+      shapenet: [
+        [./datalist/train.txt, 1.0],
+      ]

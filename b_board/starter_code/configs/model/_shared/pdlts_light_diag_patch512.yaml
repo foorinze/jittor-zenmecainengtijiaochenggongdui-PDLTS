@@ -1,0 +1,18 @@
+__target__: PDLTSLight
+
+# 速度诊断配置: patch=512, num_neighbors=16.
+# 显存降低, 每 iter 理应更快. 对"能不能学到去噪方向"有价值的快速信号.
+# 默认模型配置使用 patch_size=1024、num_neighbors=32。
+
+pc_channel: 3
+aug_channel: 48
+n_injector: 12
+cut_channel: 24
+nflow_module: 12
+num_neighbors: 16
+
+mlgc_hidden: 64
+coupling_hidden: 64
+log_scale_clamp: 0.1
+
+predict_seed_k_alpha: 30
