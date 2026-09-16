@@ -31,6 +31,18 @@ result.zip
 *.log
 nohup.out
 
+# Generated weights and arrays; only the four final inference weights are public.
+*.pkl
+*.pt
+*.ckpt
+*.npz
+*.npy
+.DS_Store
+!/a_board/checkpoints/stage1_base_ep99.pkl
+!/a_board/checkpoints/stage2_specialist_final.pkl
+!/b_board/checkpoints/base_ep149.pkl
+!/b_board/checkpoints/specialist_final.pkl
+
 # Local DCD comparison sources: no upstream license; excluded from release.
 /b_board/starter_code/tests/_dcd_oracle_numpy.py
 /b_board/starter_code/tests/test_dcd_oracle_equivalence.py

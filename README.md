@@ -59,7 +59,7 @@ bash a_board/run_all.sh infer
 
 该命令使用随包权重，执行两遍推理和冻结方向场后处理。数据结构、从零训练与各阶段配置见 [A 榜复现说明](a_board/README.md)。
 
-## B 榜快速复现
+## 环境安装
 
 环境建议：
 
@@ -75,6 +75,14 @@ bash a_board/run_all.sh infer
 python -m pip install -r requirements.txt
 ```
 
+## 数据准备
+
+从[比赛官网](https://www.educoder.net/competitions/Jittor-7)的“评测数据”栏目按参赛账号权限获取赛道二数据，分别使用对应榜单的训练集和测试集。比赛数据不随仓库分发，也不提供绕过官方访问权限的下载镜像。
+
+数据根目录采用仓库内相对路径：A 榜为 `a_board/dataset/`，B 榜为 `b_board/dataset/`。数据已存于其他磁盘时，可在这两个目录下建立指向实际数据的软链接。B 榜测试与训练路径分别由 `b_board/starter_code/configs/data/b_final/official_b_test_noisy.yaml` 和 `train_b_generated.yaml` 的 `train_dataset` / `predict_dataset` 下 `datapath.input_dataset_dir` 指定，配置中的相对路径以 `b_board/starter_code/` 为基准。完整流水线还使用约定的 `dataset/` 路径，因此运行流水线时应保持下述目录结构或用软链接映射，不能仅修改一个配置字段。
+
+## B 榜评测／推理
+
 将官方 B 榜测试数据放到：
 
 ```text
@@ -84,7 +92,9 @@ b_board/dataset/test_noisy_b/shapenet/00000000/<sample_id>/noisy.npy
 测试集应有 200 个样本。然后在仓库根目录执行：
 
 ```bash
-bash b_board/reproduce_b_final.sh
+bash b_board/reproduce_b_final.sh \
+  --base-ckpt b_board/checkpoints/base_ep149.pkl \
+  --specialist-ckpt b_board/checkpoints/specialist_final.pkl
 ```
 
 脚本会检查数据数量、执行两遍推理、确认每遍输出完整，并生成 `result.zip`。
@@ -104,9 +114,20 @@ cd b_board
 bash scripts/experiments/b_final/train_b_final_pipeline.sh
 ```
 
+该流水线依次生成训练对、训练基础模型、生成第一遍缓存和训练第二遍专训模型。基础模型配置为 `b_board/starter_code/configs/task/b_final/train_base_scratch_ep100.yaml`，续训配置为同目录的 `train_base_resume_ep100_149.yaml`。已有流水线生成的训练对和 `train_b_generated.txt` 时，可从仓库根目录单独启动基础模型训练：
+
+```bash
+cd b_board/starter_code
+python run.py --task b_final/train_base_scratch_ep100 --seed 123
+```
+
+这条命令只训练前 100 轮，完整最终方案应使用上面的全流程命令。A 榜全流程为仓库根目录执行 `bash a_board/run_all.sh full`，其基础训练配置为 `a_board/starter_code/configs/task/repro/01_train_base.yaml`。基础模型随机种子为 123；各数据生成和专训阶段的种子由对应脚本的 `--seed` 参数指定，默认值及训练契约见两榜复现说明。
+
 `b_final` 目录包含最终 B 榜方案的训练脚本及配置。目录与配置对应关系见 [目录与配置名称](docs/public_naming_map.md)。
 
 ## 复现实验边界
+
+结果包含 CD（Chamfer distance，倒角距离）和 P2S（point-to-surface，点到面距离）两项。公开本地评测按带噪输入相对真值的误差改善比例分别计分，总分为 `0.5 × CD_score + 0.5 × P2S_score`；缺失或非法预测按评测规则处理。具体计算、数据对齐与可执行评测命令见 [评测规范](docs/evaluation_protocol.md)。本地模拟评测不等于官方线上成绩；测试集没有公开真值时只能复现推理输出，不能在本地独立重算线上成绩。
 
 随仓库权重可以复现 B 榜 81.05 对应的推理链。由于 2026-08-11 首次生成 B 榜训练对时使用了 Python `hash()` 且未固定 `PYTHONHASHSEED`，无法从原始 mesh 逐位重建当时的训练点云对；当前重训脚本已改用 SHA-256 派生稳定种子，能复现训练流程，但不能保证新权重与线上提交权重逐位一致。
 
@@ -129,6 +150,8 @@ B 榜可部署分类器的 ROC-AUC（分类排序指标）为 0.670，直接全�
 ## 文件来源与验证
 
 代码来源及随仓库提供的内容见 [代码来源与发布范围](docs/release_scope.md)。
+
+四份最终权重由本项目训练，每份约 3.11 MB，直接随对应榜单的 `checkpoints/` 目录提供；用途是复现最终推理，来源与 SHA-256 校验值见该目录及 [B 榜结果清单](b_board/results/README.md)。这些小型最终权重是明确保留项，不包含训练过程检查点、优化器状态或大型模型权重。其余生成权重、数组、日志与输出目录默认由 `.gitignore` 排除。
 
 当前目录的文件清单、验证结果及检查命令见 [发布准备与验证](docs/release_preparation.md)。
 

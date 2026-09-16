@@ -7,7 +7,7 @@
     "json": 17,
     "yaml": 65,
     "shell": 4,
-    "links": 287
+    "links": 289
   },
   "findings": [],
   "weights": [
@@ -35,7 +35,7 @@
   "audited_files": [
     {
       "path": ".gitignore",
-      "sha256": "40eff67a42f398676f53c5d9109f542c9bfb12d48d3cf38db1471ca5f7e05ebe"
+      "sha256": "ca359bf2361642030f58f6f63821ba8f2b8273f4e11c7495263c12485f4d2ca6"
     },
     {
       "path": "a_board/checkpoints/SHA256SUMS.txt",
@@ -1259,7 +1259,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "9973878c41abb4e6dbc0a374b70e5b43975477c87503c68dfbec90ba3502a2d6"
+      "sha256": "05468c18687dce8e4e3a20646b5c21f5ff3c85ef7697cbc9531e37c63c819353"
     },
     {
       "path": "requirements.txt",
