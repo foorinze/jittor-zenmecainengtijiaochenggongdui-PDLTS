@@ -1543,8 +1543,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10503,
-      "sha256": "05468c18687dce8e4e3a20646b5c21f5ff3c85ef7697cbc9531e37c63c819353"
+      "bytes": 10502,
+      "sha256": "d35aa9d570c9c2eaaad7747e252e5c10033561191b13417f326dcf3404bc137d"
     },
     {
       "path": "requirements.txt",
@@ -1624,7 +1624,7 @@
     {
       "path": "validation/reports/release_static_validation.json",
       "bytes": 54999,
-      "sha256": "5627fcda4648e257244b1de0a2bbafd652526fc183f83bf518ad27643eff5618"
+      "sha256": "9ce67ed9471a0665cf9ba3c280f6687b72dc13af413d1b6ea9fae9eb88523a18"
     }
   ]
 }
